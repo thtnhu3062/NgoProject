@@ -1,0 +1,13 @@
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\bin\Debug\net6.0\NgoProjectLib.deps.json
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\bin\Debug\net6.0\NgoProjectLib.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\bin\Debug\net6.0\NgoProjectLib.pdb
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\NgoProjectLib.csproj.AssemblyReference.cache
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\NgoProjectLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\NgoProjectLib.AssemblyInfoInputs.cache
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\NgoProjectLib.AssemblyInfo.cs
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\NgoProjectLib.csproj.CoreCompileInputs.cache
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\NgoProjectLib.sourcelink.json
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\NgoProjectLib.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\refint\NgoProjectLib.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\NgoProjectLib.pdb
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProjectLib\obj\Debug\net6.0\ref\NgoProjectLib.dll

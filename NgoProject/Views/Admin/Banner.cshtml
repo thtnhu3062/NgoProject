@@ -1,0 +1,31 @@
+﻿@model NgoProjectLib.Banner 
+@{
+    Layout = "_AdminLayout";
+}
+
+
+    <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Basic form elements</h4>
+                  <p class="card-description">
+                    Basic form elements
+                  </p>
+                  <form class="forms-sample" asp-action="Banner" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                      <label asp-for="Photo">File upload</label>
+                      <input type="file" name="file" asp-for="Photo" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="file" name="file" asp-for="Photo" class="form-control file-upload-info" placeholder="Upload Image">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" type="file" name="file" asp-for="Photo">Upload</button>
+                        </span>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+           

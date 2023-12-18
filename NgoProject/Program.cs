@@ -1,6 +1,10 @@
+using NgoProject.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<DatabaseContext>();
 // Add services to the container.
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

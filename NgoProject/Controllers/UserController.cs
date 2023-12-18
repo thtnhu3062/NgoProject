@@ -19,5 +19,9 @@ namespace NgoProject.Controllers
         {
             return View();
         }
+        public IActionResult Banner()
+        {
+            return View();
+        }
     }
 }
