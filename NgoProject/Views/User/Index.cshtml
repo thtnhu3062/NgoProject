@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<NgoProject.Models.BannerTable>
 @{
     Layout = "_Layout";
 }
@@ -9,7 +9,8 @@
 
 
     <main>
-
+        @foreach (var item in Model)
+    {
         <section class="hero-section hero-section-full-height">
             <div class="container-fluid">
                 <div class="row">
@@ -18,7 +19,7 @@
                         <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="~/user/images/slide/chuyenanh1.jpg" class="carousel-image img-fluid" alt="...">
+                                    <img src="~/admin/images/@item.Image" class="carousel-image img-fluid" alt="...">
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
                                         <h1>be a NGO's</h1>
@@ -26,7 +27,7 @@
                                         <p>Help poor people overcome difficulties</p>
                                     </div>
                                 </div>
-
+    
                                 <div class="carousel-item">
                                     <img src="~/user/images/slide/chuyenhinh2.jpg" class="carousel-image img-fluid" alt="...">
 
@@ -63,7 +64,9 @@
                 </div>
             </div>
         </section>
-
+    
+   
+}
       
 
         <section class="section-padding">

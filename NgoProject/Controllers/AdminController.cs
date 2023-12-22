@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NgoProject.Context;
-using NgoProjectLib;
-using System.IO;
-using Microsoft.EntityFrameworkCore;
-using System.Net.Http;
-using System.Security.Policy;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.IO.Compression;
+
+
 using NgoProject.ViewModel;
+using NgoProject.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace NgoProject.Controllers
 {
@@ -26,46 +24,45 @@ namespace NgoProject.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Banner()
+        public async Task<IActionResult> Banner(int id)
         {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult Bannershow()
-        {
-            return View();
+            BannerTable? b = await db.banners!.SingleOrDefaultAsync(x => x.Id == id); 
+
+            return View(b);
         }
         [HttpPost]
-        public async Task<IActionResult> Banner(ViewModelBanner vb)
+        public async Task<IActionResult> Banner(int id , ViewModelBanner model)
         {
             if(ModelState.IsValid)
             {
-                string imageFilename = string.Empty;
-                if(vb.Photo !=null && vb.Photo.Length > 0)
+                string imageFilename = string.Empty; 
+                if(model.Image !=null && model.Image.Length > 0)
                 {
-                    imageFilename = vb.Photo.FileName;
-                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "imagess"); 
+                    imageFilename = model.Image.FileName;
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
                     if(!Directory.Exists(imgFolder))
                     {
                         Directory.CreateDirectory(imgFolder);
+
                     }
                     var imgPath = Path.Combine(imgFolder, imageFilename);
                     var fs = new FileStream(imgPath, FileMode.Create);
-                    await vb.Photo.CopyToAsync(fs);
+                    await model.Image.CopyToAsync(fs);
                 }
-                Banner b = new Banner
+                BannerTable p = new BannerTable
                 {
-                    Photo = imageFilename
+                  Id = model.Id , 
+                  Title = model.Title ,
+                  Content = model.Content ,
+                    Image = imageFilename
                 };
-                db.banners!.Add(b);
+                db.Attach(p).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-
-
+                return RedirectToAction("Index" , "User");
             }
-            return View(vb);
+            return View(model);
         }
-
+       
     }
 }
 
