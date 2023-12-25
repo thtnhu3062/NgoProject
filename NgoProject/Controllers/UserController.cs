@@ -2,6 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using NgoProject.Context;
+using NgoProject.Models;
+using NgoProject.ViewModel;
+using QuickMailer;
 
 
 namespace NgoProject.Controllers
@@ -17,12 +20,40 @@ namespace NgoProject.Controllers
             this.env = env;
         }
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public  IActionResult Index()
         {
-            var content = await db.banners?.ToListAsync();
-            return View(content);
+            return View(new Models.Total { Bn1 = db.banner?.ToList(), Bn2 = db.banners?.ToList() });
+           
         }
+     
+        [HttpGet]
+        public IActionResult SendFeedBack()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult SendFeedBack(SendFeedback send)
+        {
+            try
+            {
+                string msg = "Email Send Failed";
+                Email email = new Email();
+                bool isSend = email.SendEmail(send.To, Credential.Email, Credential.Password, send.Subject, send.Body);
+                if (isSend)
+                {
+                    msg = "Email has been send";
 
+                }
+                ViewBag.msg = msg;
+                RedirectToAction("Index", "User");  
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return View();
+        }
+  
         
         public IActionResult Donate()
         {

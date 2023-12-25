@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NgoProject\\NgoProject\\NgoProject.csproj": {}
+    "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\NgoProject.csproj": {}
   },
   "projects": {
-    "D:\\NgoProject\\NgoProject\\NgoProject.csproj": {
+    "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\NgoProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NgoProject\\NgoProject\\NgoProject.csproj",
+        "projectUniqueName": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\NgoProject.csproj",
         "projectName": "NgoProject",
-        "projectPath": "D:\\NgoProject\\NgoProject\\NgoProject.csproj",
+        "projectPath": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\NgoProject.csproj",
         "packagesPath": "C:\\Users\\Ngoc Hai\\.nuget\\packages\\",
-        "outputPath": "D:\\NgoProject\\NgoProject\\obj\\",
+        "outputPath": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ngoc Hai\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,6 +63,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.16, )"
+            },
+            "QuickMailer": {
+              "target": "Package",
+              "version": "[1.0.0.1, )"
             }
           },
           "imports": [

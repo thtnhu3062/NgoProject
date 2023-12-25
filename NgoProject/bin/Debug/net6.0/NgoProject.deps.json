@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.Design": "7.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.12",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.12",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
+          "QuickMailer": "1.0.0.1"
         },
         "runtime": {
           "NgoProject.dll": {}
@@ -1747,6 +1748,14 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {
             "assemblyVersion": "6.6.1.2",
             "fileVersion": "6.6.1.2"
+          }
+        }
+      },
+      "QuickMailer/1.0.0.1": {
+        "runtime": {
+          "lib/net5.0/QuickMailer.dll": {
+            "assemblyVersion": "1.0.0.1",
+            "fileVersion": "1.0.0.1"
           }
         }
       },
@@ -3521,6 +3530,13 @@
       "sha512": "sha512-Wm/AOFICTIrCgbVxv9dNWusraTzcggbo5W4ao7hD8NNVq911an9TGwW+uNuYc8I5PkpTeMuSXneV2u6hbi1P4w==",
       "path": "nuget.versioning/6.6.1",
       "hashPath": "nuget.versioning.6.6.1.nupkg.sha512"
+    },
+    "QuickMailer/1.0.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AMKcB545uqkrC7vUmLap0rOBtma8ozsWEOxv+Q/kVDGySxQah984wkJnADrh2Th1YHoJG9G/EuLVjlmS2tQL3g==",
+      "path": "quickmailer/1.0.0.1",
+      "hashPath": "quickmailer.1.0.0.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

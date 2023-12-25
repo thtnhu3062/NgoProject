@@ -13,8 +13,10 @@ namespace NgoProject.ViewModel
 
         public string? Content { get; set; }
 
-
+        [Required (ErrorMessage ="Image can not be bank")]
         public IFormFile? Image { get; set; }
 
     }
+
+    
 }

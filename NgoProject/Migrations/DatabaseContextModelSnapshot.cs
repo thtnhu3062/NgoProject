@@ -21,21 +21,64 @@ namespace NgoProject.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("NgoProjectLib.Banner", b =>
+            modelBuilder.Entity("NgoProject.Models.BannerTable", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdOne")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdOne"));
 
-                    b.Property<string>("Photo")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                    b.Property<string>("ContentOne")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("ImageOne")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("tbBanner");
+                    b.Property<string>("TitleOne")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdOne");
+
+                    b.ToTable("banner");
+                });
+
+            modelBuilder.Entity("NgoProject.Models.BannerTabless", b =>
+                {
+                    b.Property<int>("IdTwo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdTwo"));
+
+                    b.Property<string>("ContentTwo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageTwo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleTwo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdTwo");
+
+                    b.ToTable("bannerss");
+                });
+
+            modelBuilder.Entity("NgoProject.Models.SendFeedback", b =>
+                {
+                    b.Property<string>("To")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("To");
+
+                    b.ToTable("sendFeedback");
                 });
 #pragma warning restore 612, 618
         }

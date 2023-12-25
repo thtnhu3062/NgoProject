@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NgoProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7da530f04bd4095d21364c4577f07e37a9e6a418")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08ade531acd94eee287e7c0d09a6a411f3bc36fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("NgoProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NgoProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
