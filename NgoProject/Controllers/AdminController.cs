@@ -5,6 +5,7 @@ using NgoProject.Context;
 using NgoProject.ViewModel;
 using NgoProject.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 
 namespace NgoProject.Controllers
@@ -13,36 +14,44 @@ namespace NgoProject.Controllers
     {
         private readonly IWebHostEnvironment _hostEnvironment;
         private readonly DatabaseContext db;
-
+   
         public AdminController(DatabaseContext db, IWebHostEnvironment hostEnvironment)
         {
             this.db = db;
             this._hostEnvironment = hostEnvironment;
-        }
+           
+    }
         public IActionResult Index()
         {
             return View();
         }
 
 
+
+
+        
         [HttpGet]
         public async Task<IActionResult> Banner1(int id)
         {
+              BannerTable? b = await db.banner!.FindAsync(id);
+              return View( new ViewModel.ViewModelBanner
+              {
+                  bt = db.banner.ToList(),
+                  
+              });
+           
+          
 
-
-            BannerTable? b = await db.banner!.FindAsync(id);
-            
-            return View(b);
         }
-
     
         [HttpPost]
-        public async Task<IActionResult> Banner1(int id, ViewModelBanner model)
+        public async Task< IActionResult> Banner1( ViewModelBanner model)
         {
            
 
             if (ModelState.IsValid)
             {
+              
                 string imageFilename = string.Empty;
                 if (model.Image != null && model.Image.Length > 0)
                 {
@@ -64,6 +73,7 @@ namespace NgoProject.Controllers
                     ContentOne = model.Content,
                     ImageOne = imageFilename
                 };
+                
                 db.Attach(p).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index", "User");
@@ -76,8 +86,20 @@ namespace NgoProject.Controllers
         [HttpGet]
         public async Task<IActionResult> Banner2(int id)
         {
-            BannerTabless? b = await db.banners!.SingleOrDefaultAsync(x => x.IdTwo == id);
-            return View(b);
+       
+            BannerTabless? b = await db.banners!.SingleOrDefaultAsync(x => x.IdTwo ==  id);
+
+
+               var query = from p in db.banners where p.IdTwo == 1 select p;
+            var list = query.ToList();
+            
+            return View(new ViewModel.ViewModelBanner
+            {
+                btss = query.ToList(),
+                 //btss = db.banners!.ToList(),
+
+            });
+
         }
 
         [HttpPost]
@@ -120,7 +142,11 @@ namespace NgoProject.Controllers
         {
          
             BannerTabless? b = await db.banners!.SingleOrDefaultAsync(x => x.IdTwo == id);
-            return View(b);
+            return View(new ViewModel.ViewModelBanner
+            {
+                btss = db.banners.ToList(),
+
+            });
         }
 
         [HttpPost]
@@ -157,6 +183,19 @@ namespace NgoProject.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> NewsLetter(int id)
+        {
+
+            NewsLetter? b = await db.NewsLetters!.SingleOrDefaultAsync(x => x.Id == id);
+            return View(b);
+        }
+        //[HttpPost]
+        //public async Task<IActionResult> NewsLetter()
+        //{
+
+        //}
 
     }
 }

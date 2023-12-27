@@ -14,26 +14,35 @@
 
 
             <form class="forms-sample" method="post" asp-action="Banner2" enctype="multipart/form-data">
-                <div class="form-group" hidden>
-                    <label asp-for="Id" for="exampleInputName1">Id</label>
-                    <input type="text" asp-for="Id" class="form-control" id="exampleInputName1" placeholder="Name" value="1">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName1" asp-for="Title">Title</label>
-                    <input type="text" asp-for="Title" class="form-control" id="exampleInputName1" >
+                @foreach (var item in Model.btss   )
+                    {
+                   
+
+
+                    <div class="form-group" hidden>
+                        <label asp-for="Id" for="exampleInputName1">Id</label>
+                        <input type="text" asp-for="Id" class="form-control" id="exampleInputName1" placeholder="Name" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1" asp-for="Title">Title</label>
+                    <input type="text" asp-for="Title" class="form-control" value="@item.TitleTwo" >
                 </div>
                 <div class="form-group">
                     <label for="exampleInputName1" asp-for="Content">Content</label>
-                    <input type="text" asp-for="Content" class="form-control" id="exampleInputName1">
+                    <input type="text" asp-for="Content" class="form-control" id="exampleInputName1" value="@item.ContentTwo">
                 </div>
 
                 <div class="form-group">
+                    <button>
                     <label asp-for="Image">File upload</label>
-                    <input asp-for="Image" type="file" class="file-upload-default">
+                    <input asp-for="Image" type="file" />
                     <span asp-validation-for="Image" class="text-danger"></span>
+                    </button>
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <button class="btn btn-light">Cancel</button>
+                
+                }
             </form>
         </div>
     </div>

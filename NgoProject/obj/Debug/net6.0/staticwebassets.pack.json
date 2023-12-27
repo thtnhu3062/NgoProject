@@ -921,10 +921,6 @@
       "PackagePath": "staticwebassets\\admin\\images\\sprites\\yellow.png"
     },
     {
-      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\admin\\images\\z4756995415707_88c0733faa5ca3e45950b078dad666cd.jpg",
-      "PackagePath": "staticwebassets\\admin\\images\\z4756995415707_88c0733faa5ca3e45950b078dad666cd.jpg"
-    },
-    {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\admin\\js\\Chart.roundedBarCharts.js",
       "PackagePath": "staticwebassets\\admin\\js\\Chart.roundedBarCharts.js"
     },
@@ -7209,24 +7205,12 @@
       "PackagePath": "staticwebassets\\user\\images\\slide\\BH.jpg"
     },
     {
-      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\Black Realistic Collage Calendar Organizer Desktop Wallpaper.png",
-      "PackagePath": "staticwebassets\\user\\images\\slide\\Black Realistic Collage Calendar Organizer Desktop Wallpaper.png"
-    },
-    {
-      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\IMG_20220612_152646.jpg",
-      "PackagePath": "staticwebassets\\user\\images\\slide\\IMG_20220612_152646.jpg"
-    },
-    {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\NH.jpg",
       "PackagePath": "staticwebassets\\user\\images\\slide\\NH.jpg"
     },
     {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\TN.jpg",
       "PackagePath": "staticwebassets\\user\\images\\slide\\TN.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\backgroud.jpg",
-      "PackagePath": "staticwebassets\\user\\images\\slide\\backgroud.jpg"
     },
     {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\chuyenanh1.jpg",
@@ -7243,14 +7227,6 @@
     {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\chuyenhinh3.jpg",
       "PackagePath": "staticwebassets\\user\\images\\slide\\chuyenhinh3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\download (4).jfif",
-      "PackagePath": "staticwebassets\\user\\images\\slide\\download (4).jfif"
-    },
-    {
-      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\download (6).jpg",
-      "PackagePath": "staticwebassets\\user\\images\\slide\\download (6).jpg"
     },
     {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\volun.jpg",

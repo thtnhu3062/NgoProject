@@ -40,13 +40,7 @@ namespace NgoProject.Models
 
         public string? Body { get; set; }
     }
-    public class Total
-    {
-        [Key]
-        public IEnumerable< BannerTable>? Bn1 { get; set; }
-        public IEnumerable< BannerTabless>? Bn2 { get; set; }
-        public IEnumerable<SendFeedback>? senss { get; set; }
-    }
+ 
 
 
 }

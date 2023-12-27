@@ -15,6 +15,8 @@ namespace NgoProject.Context
 
         public virtual DbSet<SendFeedback>? sendFeedback { get; set; }
 
+        public virtual DbSet<NewsLetter>? NewsLetters { get; set; }
+
   
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

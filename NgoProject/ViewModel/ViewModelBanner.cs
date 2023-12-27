@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using NgoProject.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,7 +16,23 @@ namespace NgoProject.ViewModel
 
         [Required (ErrorMessage ="Image can not be bank")]
         public IFormFile? Image { get; set; }
+        public IEnumerable<BannerTable>? bt { get; set; }
 
+          public IEnumerable<BannerTabless>? btss { get; set; }
+
+    }
+    public class ViewModelNewLetters
+    {
+        public int Id { get; set; }
+
+        [Required (ErrorMessage ="Title can not be bank")]
+        public string? Title { get; set; }
+        [Required(ErrorMessage = "Content can not be bank")]
+        public string? Content { get; set; }
+
+        public string? Image { get; set; }
+
+        public DateTime? DateTime { get; set; }
     }
 
     

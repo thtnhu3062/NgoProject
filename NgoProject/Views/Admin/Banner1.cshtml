@@ -1,4 +1,5 @@
 ﻿@model NgoProject.ViewModel.ViewModelBanner
+
 @{
     Layout = "_AdminLayout";
 }
@@ -9,29 +10,34 @@
             <p class="card-description">
                 Basic form elements
             </p>
-            <form class="forms-sample" method="post" asp-action="Banner1" enctype="multipart/form-data">
+
+            <form class="forms-sample" method="post"  asp-action="Banner1" enctype="multipart/form-data">
+                @foreach (var item in Model.bt)
+                {
                 <div class="form-group" hidden>
                     <label asp-for="Id" for="exampleInputName1">Id</label>
-                    <input type="text" asp-for="Id" class="form-control" id="exampleInputName1" name="id" value="1">
+                    <input type="text" asp-for="Id" class="form-control"  name="Id" value="1">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputName1" asp-for="Title">Title</label>
-                    <input type="text" asp-for="Title" class="form-control" id="exampleInputName1" name="title">
+                        <input type="text" asp-for="Title" class="form-control" id="exampleInputName1" name="Title" value="@item.TitleOne" />
                 </div>
                 <div class="form-group">
                     <label for="exampleInputName1" asp-for="Content">Content</label>
-                    <input type="text" asp-for="Content" class="form-control" id="exampleInputName1" name="content" >
+                    <input type="text" asp-for="Content" class="form-control" id="exampleInputName1" name="Content" value="@item.ContentOne" />
                 </div>
             
                 <div class="form-group">
                 
                     <label asp-for="Image">File upload</label>
-                    <input asp-for="Image" type="file" class="file-upload-default">
+                    <input asp-for="Image" type="file" class="file-upload-default" name="Image">
                     <span asp-validation-for="Image" class="text-danger"></span>
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <button class="btn btn-light">Cancel</button>
+                }
             </form>
+            
         </div>
     </div>
 </div>
