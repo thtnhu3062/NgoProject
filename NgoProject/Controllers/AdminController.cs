@@ -142,9 +142,12 @@ namespace NgoProject.Controllers
         {
          
             BannerTabless? b = await db.banners!.SingleOrDefaultAsync(x => x.IdTwo == id);
+            var query = from p in db.banners where p.IdTwo == 2 select p;
+            var list = query.ToList();
             return View(new ViewModel.ViewModelBanner
             {
-                btss = db.banners.ToList(),
+                btss = query.ToList(),
+                //btss = db.banners!.ToList(),
 
             });
         }
