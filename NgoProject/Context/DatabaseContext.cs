@@ -23,13 +23,14 @@ namespace NgoProject.Context
         {
             base.OnConfiguring(optionsBuilder);
             
-            string str = "Server=.;Database=NgoProject;Uid=sa;pwd=200422;TrustServerCertificate=true";
+            string str = "Server=.;Database=NgoProject;Uid=sa;pwd=123;TrustServerCertificate=true";
             optionsBuilder.UseSqlServer(str);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
+        public DbSet<NgoProject.Models.Category>? Category { get; set; }
 
     }
 }
