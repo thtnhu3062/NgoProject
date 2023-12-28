@@ -5,7 +5,7 @@ namespace NgoProject.Areas.Admin.Controllers
 {
     [Area("admin")]
     [Route("admin")]
-    [Route("admin/homeadmin")]
+    [Route("admin/HomeAdmin")]
     public class HomeAdminController : Controller
     {
         NgoProjectContext db=new NgoProjectContext();
