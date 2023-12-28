@@ -21,4 +21,9 @@
     <PackageReference Include="QuickMailer" Version="1.0.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+
 </Project>
