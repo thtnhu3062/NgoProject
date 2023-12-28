@@ -19,10 +19,18 @@ namespace NgoProject.Controllers
             this.db = db;
             this.env = env;
         }
+
+        
         [HttpGet]
         public  IActionResult Index()
         {
-            return View(new Models.Total { Bn1 = db.banner?.ToList(), Bn2 = db.banners?.ToList() });
+ 
+            return View(new Models.Ienumerable
+            {
+                Bn1 = db.banner?.ToList(),
+                Bn2 = db.banners?.ToList()
+            });
+            
            
         }
      

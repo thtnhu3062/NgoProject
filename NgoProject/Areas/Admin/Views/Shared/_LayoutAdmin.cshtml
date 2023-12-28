@@ -302,9 +302,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                        <a class="nav-link" data-toggle="collapse"aria-expanded="false" aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
+
                             <span class="menu-title">Donate Manager</span>
+
+                            <span class="menu-title"> </span>
+
                             <i class="menu-arrow"></i>
                         </a>
 @*                        <div class="collapse" id="ui-basic">
@@ -330,17 +334,25 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                             <i class="icon-bar-graph menu-icon"></i>
+
                             <span class="menu-title">Category</span>
+
+                            <span class="menu-title">NewsLetters</span>
+
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="charts">
                             <ul class="nav flex-column sub-menu">
+
                                 <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="AddCategory">Create categories</a></li>
                             </ul>
                         </div>
                         <div class="collapse" id="charts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="Category">List of categories</a></li>
+
+                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/charts/chartjs.html">NewsLetters</a></li>
+
                             </ul>
                         </div>
                     </li>

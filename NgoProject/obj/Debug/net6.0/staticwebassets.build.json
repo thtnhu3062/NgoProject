@@ -1,6 +1,9 @@
 {
   "Version": 1,
+
   "Hash": "KoQQqkr+KfHZoQN3qsXzTNgfftZDmb2/5WRFya2853I=",
+
+
   "Source": "NgoProject",
   "BasePath": "_content/NgoProject",
   "Mode": "Default",
@@ -3927,10 +3930,12 @@
       "OriginalItemSpec": "wwwroot\\admin\\images\\sprites\\yellow.png"
     },
     {
+
       "Identity": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\admin\\js\\ace.js",
       "SourceId": "NgoProject",
       "SourceType": "Discovered",
       "ContentRoot": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\",
+
       "BasePath": "_content/NgoProject",
       "RelativePath": "admin/js/ace.js",
       "AssetKind": "All",
@@ -30634,10 +30639,30 @@
       "OriginalItemSpec": "wwwroot\\user\\images\\pf4.jpg"
     },
     {
+
       "Identity": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\chuyenanh1.jpg",
       "SourceId": "NgoProject",
       "SourceType": "Discovered",
       "ContentRoot": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\",
+      "BasePath": "_content/NgoProject",
+      "RelativePath": "user/images/slide/BH.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user\\images\\slide\\BH.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\chuyenanh1.jpg",
+      "SourceId": "NgoProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\",
       "BasePath": "_content/NgoProject",
       "RelativePath": "user/images/slide/chuyenanh1.jpg",
       "AssetKind": "All",
@@ -30702,6 +30727,7 @@
       "OriginalItemSpec": "wwwroot\\user\\images\\slide\\chuyenhinh3.jpg"
     },
     {
+
       "Identity": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\volun.jpg",
       "SourceId": "NgoProject",
       "SourceType": "Discovered",

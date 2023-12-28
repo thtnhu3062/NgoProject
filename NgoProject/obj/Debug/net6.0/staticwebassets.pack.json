@@ -921,7 +921,9 @@
       "PackagePath": "staticwebassets\\admin\\images\\sprites\\yellow.png"
     },
     {
+
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\admin\\js\\Chart.roundedBarCharts.js",
+
       "PackagePath": "staticwebassets\\admin\\js\\Chart.roundedBarCharts.js"
     },
     {
@@ -7205,7 +7207,9 @@
       "PackagePath": "staticwebassets\\user\\images\\pf4.jpg"
     },
     {
+
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\chuyenanh1.jpg",
+
       "PackagePath": "staticwebassets\\user\\images\\slide\\chuyenanh1.jpg"
     },
     {
@@ -7222,6 +7226,7 @@
     },
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\volun.jpg",
+
       "PackagePath": "staticwebassets\\user\\images\\volun.jpg"
     },
     {
