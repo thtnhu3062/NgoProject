@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NgoProject.Models;
+
 
 namespace NgoProject.Areas.Admin.Controllers
 {
@@ -19,6 +21,7 @@ namespace NgoProject.Areas.Admin.Controllers
         [Route("Category")]
         public IActionResult Category()
         {
+
             var lst=db.Categories.ToList();
             return View(lst);
         }
@@ -29,6 +32,23 @@ namespace NgoProject.Areas.Admin.Controllers
 
             return View();
         }
+
+        [Route("Users")]
+        [HttpGet]
+        public IActionResult Users()
+        {
+
+            return View();
+        }
+
+        [Route("Donate")]
+        [HttpGet]
+        public IActionResult Donate()
+        {
+
+            return View();
+        }
+
         [Route("AddCategory")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -43,6 +63,79 @@ namespace NgoProject.Areas.Admin.Controllers
              return View(sp);
 
         }
+
+        [Route("EditCategory")]
+        [HttpGet]
+        public IActionResult EditCategory(int id)
+        {
+            var cate = db.Categories.Find(id);
+            return View(cate);
+        }
+        [Route("EditCategory")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditCategory(Category cate)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(cate).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Category", "HomeAdmin");
+            }
+            return View(cate);
+
+        }
+
+        [Route("News")]
+        public IActionResult News()
+        {
+
+            return View();
+        }
+        [Route("AddNews")]
+        [HttpGet]
+        public IActionResult AddNews()
+        {
+
+            return View();
+        }
+
+        //[Route("AddCategory")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult AddCategory(Category sp)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Categories.Add(sp);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Category");
+        //    }
+        //    return View(sp);
+
+        //}
+
+        //[Route("EditCategory")]
+        //[HttpGet]
+        //public IActionResult EditCategory(int id)
+        //{
+        //    var cate = db.Categories.Find(id);
+        //    return View(cate);
+        //}
+        //[Route("EditCategory")]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult EditCategory(Category cate)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(cate).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Category", "HomeAdmin");
+        //    }
+        //    return View(cate);
+
+        //}
 
     }
 }
