@@ -9,16 +9,16 @@ namespace NgoProject.ViewModel
     {
         [Required]
         public int Id { get; set; }
-
+        [Required]
         public string? Title { get; set; }
-
+        [Required]
         public string? Content { get; set; }
 
         [Required (ErrorMessage ="Image can not be bank")]
         public IFormFile? Image { get; set; }
-        public IEnumerable<BannerTable>? bt { get; set; }
+        public IEnumerable<Banner>? bt { get; set; }
 
-          public IEnumerable<BannerTabless>? btss { get; set; }
+          public IEnumerable<Bannerss>? btss { get; set; }
 
     }
     public class ViewModelNewLetters

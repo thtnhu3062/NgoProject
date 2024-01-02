@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace NgoProject.Models;
 
 public partial class Admin
 {
+    [Key]
     public int AdminId { get; set; }
 
     public string? AdminName { get; set; }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace NgoProject.Models;
 
 public partial class Donate
 {
+    [Key]
     public int DonateId { get; set; }
 
     public int? NewsId { get; set; }

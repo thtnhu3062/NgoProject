@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Project3\\NgoProject\\NgoProject\\NgoProject.csproj": {}
+    "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\NgoProject.csproj": {}
   },
   "projects": {
-    "F:\\Project3\\NgoProject\\NgoProject\\NgoProject.csproj": {
+    "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\NgoProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Project3\\NgoProject\\NgoProject\\NgoProject.csproj",
+        "projectUniqueName": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\NgoProject.csproj",
         "projectName": "NgoProject",
-        "projectPath": "F:\\Project3\\NgoProject\\NgoProject\\NgoProject.csproj",
-        "packagesPath": "C:\\Users\\El Nino\\.nuget\\packages\\",
-        "outputPath": "F:\\Project3\\NgoProject\\NgoProject\\obj\\",
+        "projectPath": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\NgoProject.csproj",
+        "packagesPath": "C:\\Users\\Ngoc Hai\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\El Nino\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ngoc Hai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -89,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

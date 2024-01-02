@@ -419,15 +419,14 @@
 
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#error1" aria-expanded="false" aria-controls="error1">
-                            <i class="icon-ban menu-icon"></i>
+                            <i class="ti-heart menu-icon"></i>
                             <span class="menu-title">Banner Manager</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="error1">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link " href="~/Admin/Banner/Banner"> Banner 1 </a></li>
-                                <li class="nav-item"> <a class="nav-link " href="~/Admin/Banner/Banner2">  Banner 2 </a></li>
-                                <li class="nav-item"> <a class="nav-link " href="~/Admin/Banner/Banner3"> Banner 3 </a></li>
+                                <li class="nav-item"> <a class="nav-link " asp-area="admin" asp-controller="HomeAdmin" asp-action="Banner">List Banner  </a></li>
+                             
                             </ul>
                         </div>
                     </li>

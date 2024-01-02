@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NgoProject.Models;
+using NgoProject.ViewModel;
 
 
 namespace NgoProject.Areas.Admin.Controllers
@@ -10,7 +11,16 @@ namespace NgoProject.Areas.Admin.Controllers
     [Route("admin/HomeAdmin")]
     public class HomeAdminController : Controller
     {
-        NgoProjectContext db=new NgoProjectContext();
+        private readonly IWebHostEnvironment _hostEnvironment;
+        private readonly NgoProjectContext db;
+
+        public HomeAdminController(NgoProjectContext db, IWebHostEnvironment hostEnvironment)
+        {
+            this.db = db;
+            this._hostEnvironment = hostEnvironment;
+
+        }
+        //  NgoProjectContext db=new NgoProjectContext();
         [Route("")]
         [Route("index")]
 
@@ -22,7 +32,7 @@ namespace NgoProject.Areas.Admin.Controllers
         public IActionResult Category()
         {
 
-            var lst=db.Categories.ToList();
+            var lst = db.Categories.ToList();
             return View(lst);
         }
         [Route("AddCategory")]
@@ -60,7 +70,7 @@ namespace NgoProject.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Category");
             }
-             return View(sp);
+            return View(sp);
 
         }
 
@@ -100,6 +110,7 @@ namespace NgoProject.Areas.Admin.Controllers
             return View();
         }
 
+
         //[Route("AddCategory")]
         //[HttpPost]
         //[ValidateAntiForgeryToken]
@@ -136,6 +147,148 @@ namespace NgoProject.Areas.Admin.Controllers
         //    return View(cate);
 
         //}
+
+
+        [Route("Banner")]
+        [HttpGet]
+        public IActionResult Banner()
+        {
+            return View(new Models.Ienumerable
+            {
+
+                Bn1 = db.Banners.ToList(),
+                Bn2 = db.Bannersses.ToList()
+            });
+
+        }
+        [Route("BannerEdit")]
+        [HttpGet("BannerEdit")]
+        public ActionResult BannerEdit(int id)
+        {
+            //  Banner? b  =  await db.Banners!.SingleOrDefaultAsync(x => x.IdOne == id);
+            Banner? b = db.Banners!.Find(id);
+
+            var Vi = new ViewModelBanner
+            {
+                Id = b.IdOne,
+                Title = b.TitleOne,
+                Content = b.ContentOne,
+
+            };
+            return View(Vi);
+            //var query = from p in db.Banners where p.IdOne == 1 select p;
+            //var list = query.ToList();
+
+            //return View(new ViewModel.ViewModelBanner
+            //{
+            //    //bt =  query.ToList(),
+
+            //    bt = db.Banners!.ToList(),
+
+            //});
+        }
+
+        [Route("BannerEdit")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BannerEdit(int id, ViewModelBanner model)
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                string imageFilename = string.Empty;
+                if (model.Image != null && model.Image.Length > 0)
+                {
+                    imageFilename = model.Image.FileName;
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
+                    if (!Directory.Exists(imgFolder))
+                    {
+                        Directory.CreateDirectory(imgFolder);
+
+                    }
+                    var imgPath = Path.Combine(imgFolder, imageFilename);
+                    var fs = new FileStream(imgPath, FileMode.Create);
+                    await model.Image.CopyToAsync(fs);
+                }
+
+                Banner p = new Banner
+                {
+                    IdOne = model.Id,
+                    TitleOne = model.Title,
+                    ContentOne = model.Content,
+                    ImageOne = imageFilename
+                };
+
+
+                // db.Set<Banner>().Update(p);
+
+                db.Attach(p).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                return RedirectToAction("Banner", "HomeAdmin");
+            }
+            return View(model);
+        }
+
+        [Route("csxc09")]
+        [HttpGet]
+        public ActionResult BannerEdit2(int id)
+        {
+            //  Banner? b  =  await db.Banners!.SingleOrDefaultAsync(x => x.IdOne == id);
+            Bannerss? k = db.Bannersses!.Find(id);
+
+            var Vie = new ViewModelBanner
+            {
+                Id = k.IdTwo,
+                Title = k.TitleTwo,
+                Content = k.ContentTwo,
+
+            };
+            return View(Vie);
+        }
+
+        [Route("csxc09")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BannerEdit2(int id, ViewModelBanner model)
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                string imageFilename = string.Empty;
+                if (model.Image != null && model.Image.Length > 0)
+                {
+                    imageFilename = model.Image.FileName;
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
+                    if (!Directory.Exists(imgFolder))
+                    {
+                        Directory.CreateDirectory(imgFolder);
+
+                    }
+                    var imgPath = Path.Combine(imgFolder, imageFilename);
+                    var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
+                    await model.Image.CopyToAsync(fs);
+                }
+
+                Bannerss p = new Bannerss
+                {
+                    IdTwo = model.Id,
+                    TitleTwo = model.Title,
+                    ContentTwo = model.Content,
+                    ImageTwo = imageFilename
+                };
+
+
+                // db.Set<Banner>().Update(p);
+
+                db.Attach(p).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                return RedirectToAction("Banner", "HomeAdmin");
+            }
+            return View(model);
+        }
+
 
     }
 }
