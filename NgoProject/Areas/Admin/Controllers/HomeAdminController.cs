@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using NgoProject.Models;
 using NgoProject.ViewModel;
+using System.Net;
 
 
 namespace NgoProject.Areas.Admin.Controllers
@@ -161,32 +162,32 @@ namespace NgoProject.Areas.Admin.Controllers
             });
 
         }
-        [Route("BannerEdit")]
-        [HttpGet("BannerEdit")]
-        public ActionResult BannerEdit(int id)
-        {
-            //  Banner? b  =  await db.Banners!.SingleOrDefaultAsync(x => x.IdOne == id);
-            Banner? b = db.Banners!.Find(id);
+        //[Route("BannerEdit")]
+        //[HttpGet("BannerEdit")]
+        //public ActionResult BannerEdit(int id)
+        //{
+        //    //  Banner? b  =  await db.Banners!.SingleOrDefaultAsync(x => x.IdOne == id);
+        //    Banner? b = db.Banners!.Find(id);
 
-            var Vi = new ViewModelBanner
-            {
-                Id = b.IdOne,
-                Title = b.TitleOne,
-                Content = b.ContentOne,
+        //    var Vi = new ViewModelBanner
+        //    {
+        //        Id = b.IdOne,
+        //        Title = b.TitleOne,
+        //        Content = b.ContentOne,
 
-            };
-            return View(Vi);
-            //var query = from p in db.Banners where p.IdOne == 1 select p;
-            //var list = query.ToList();
+        //    };
+        //    return View(Vi);
+        //    //var query = from p in db.Banners where p.IdOne == 1 select p;
+        //    //var list = query.ToList();
 
-            //return View(new ViewModel.ViewModelBanner
-            //{
-            //    //bt =  query.ToList(),
+        //    //return View(new ViewModel.ViewModelBanner
+        //    //{
+        //    //    //bt =  query.ToList(),
 
-            //    bt = db.Banners!.ToList(),
+        //    //    bt = db.Banners!.ToList(),
 
-            //});
-        }
+        //    //});
+        //}
 
         [Route("BannerEdit")]
         [HttpPost]
@@ -229,6 +230,29 @@ namespace NgoProject.Areas.Admin.Controllers
             }
             return View(model);
         }
+
+        [Route("BannerEdit")]
+        [HttpGet]
+        public IActionResult BannerEdit(int id)
+        {
+            
+            Banner? b = db.Banners!.Find(id); 
+
+
+              var Vi = new ViewModelBanner
+                {
+                    Id = b.IdOne,
+                    Title = b.TitleOne,
+                    Content = b.ContentOne,
+                 
+
+                };
+                return View(Vi);
+        }
+
+
+
+
 
         [Route("csxc09")]
         [HttpGet]
@@ -290,5 +314,72 @@ namespace NgoProject.Areas.Admin.Controllers
         }
 
 
+        [Route("OurPartner")]
+        [HttpGet]
+        public async Task<IActionResult> OurPartner()
+        {
+            //return View(new Models.Ienumerable
+            //{
+
+            //    Ourpartner = db.Ourpartners.ToList(),
+            //});
+            return View(await db.Ourpartners.ToListAsync());
+
+
+        }
+
+        [Route("OurPartnerAdd")]
+        [HttpGet]
+        public IActionResult OurPartnerAdd()
+        {
+            return View();
+        }
+        [Route("OurPartnerAdd")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OurPartnerAdd( ViewModelOurPartner model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                string imageFilename = string.Empty;
+                if (model.OurpartnerLogo != null && model.OurpartnerLogo.Length > 0)
+                {
+                    imageFilename = model.OurpartnerLogo.FileName;
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
+                    if (!Directory.Exists(imgFolder))
+                    {
+                        Directory.CreateDirectory(imgFolder);
+
+                    }
+                    var imgPath = Path.Combine(imgFolder, imageFilename);
+                    var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
+                    await model.OurpartnerLogo.CopyToAsync(fs);
+                }
+
+                Ourpartner p = new Ourpartner
+                {
+                
+                   OurpartnerName  = model.OurpartnerName,
+                    OurpartnerPhone = model.OurpartnerPhone,
+                    OurpartnerAddressWeb = model.OurpartnerAddressWeb,
+                    OurpartnerMail = model.OurpartnerMail,
+                    OurpartnerAddress = model.OurpartnerAddress,
+                    OurpartnerLogo = imageFilename
+
+                    
+
+                };
+
+
+                // db.Set<Banner>().Update(p);
+
+                db.Set<Ourpartner>().Add(p);
+                await db.SaveChangesAsync();
+                return RedirectToAction("OurPartner", "HomeAdmin");
+            }
+            return View(model);
+
+        }
     }
 }

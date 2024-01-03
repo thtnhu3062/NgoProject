@@ -1,0 +1,59 @@
+﻿@model NgoProject.ViewModel.ViewModelOurPartner
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "OurPartnerAdd";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">OurPartner</h4>
+            <p class="card-description">
+                Required data entry
+            </p>
+            @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+            <form class="forms-sample" asp-action="OurPartnerAdd" method="post" enctype="multipart/form-data">
+
+                <div class="form-group" hidden>
+                    <label for="exampleInputName1" asp-for="OurpartnerId">ID</label>
+                    <input type="text" class="form-control" asp-for="OurpartnerId" name="OurpartnerId">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName1" asp-for="OurpartnerName">Name</label>
+                    <input type="text" class="form-control" asp-for="OurpartnerName" name="OurpartnerName">
+                </div>
+           
+                <div class="form-group">
+                    <label for="exampleInputName1" asp-for="OurpartnerPhone">Phone</label>
+                    <input type="text" class="form-control" asp-for="OurpartnerPhone" name="OurpartnerPhone">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1" asp-for="OurpartnerAddressWeb">AddressWeb</label>
+                    <input type="text" class="form-control" asp-for="OurpartnerAddressWeb" name="OurpartnerAddressWeb">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1" asp-for="OurpartnerMail">Mail</label>
+                    <input type="text" class="form-control" asp-for="OurpartnerMail" name="OurpartnerMail">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1" asp-for="OurpartnerAddress">About</label>
+                    <input type="text" style="width:100% ;height:100px" class="form-control" asp-for="OurpartnerAddress" name="OurpartnerAddress">
+                </div>
+                <div class="form-group">
+                    <label asp-for="OurpartnerLogo">Upload BackGround</label>
+                    <input type="file" asp-for="OurpartnerLogo" name="OurpartnerLogo" class="file-upload-default">
+                    <span asp-validation-for="OurpartnerLogo" class="text-danger"></span>
+
+                </div>
+
+                <input type="submit" value="Create" class="btn btn-primary mr-2" />
+                <button class="btn btn-light">Cancel</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -4,8 +4,8 @@
 @{
     ViewData["Title"] = "BannerEdit";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-}
-
+  }
+    
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -20,6 +20,7 @@
                         <label for="exampleInputName1" asp-for="Id">ID</label>
                         <input type="text" class="form-control" asp-for="Id">
                     </div>
+               
                     <div class="form-group">
                         <label for="exampleInputName1" asp-for="Title">Title</label>
                         <input type="text" class="form-control" asp-for="Title" name="Title">
@@ -35,6 +36,7 @@
                     <span asp-validation-for="Image" class="text-danger"></span>
 
                     </div>
+                  
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-light">Cancel</button>
                 

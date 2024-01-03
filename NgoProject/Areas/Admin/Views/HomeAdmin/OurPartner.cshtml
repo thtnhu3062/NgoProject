@@ -1,0 +1,77 @@
+﻿@model IEnumerable<NgoProject.Models.Ourpartner>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "OurPartner";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Html.AntiForgeryToken()
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Oyr Partner</h4>
+            <p class="card-description">
+                <code>partner brands</code>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        
+                            <th>  Name</th>
+                            <th>  Logo</th>
+                            <th> About</th>
+
+                          
+                            <th> Phone</th>
+                            <th> AddressWeb</th>
+                            <th>Mail</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+                       
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OurpartnerName)
+                                </td>
+                                <td>
+                                    <img src="~/user/images/Logo/@item.OurpartnerLogo" style="width:100px ; height:auto ; border-radius: 10%;">
+                                </td>
+                                <td>
+                                            @Html.DisplayFor(modelItem => item.OurpartnerAddress)
+                               
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OurpartnerPhone)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OurpartnerAddressWeb)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OurpartnerMail)
+
+                                </td>
+                                <td>
+                                    <a asp-action="BannerEdit" asp-route-id="@item.OurpartnerId">Edit</a>
+
+                                </td>
+
+
+                            </tr>
+                        }
+                      
+                        
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1061,3 +1061,10 @@ C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\obj\Debug\net6.0\refint
 C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\obj\Debug\net6.0\NgoProject.pdb
 C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\obj\Debug\net6.0\NgoProject.genruntimeconfig.cache
 C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\obj\Debug\net6.0\ref\NgoProject.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

@@ -58,6 +58,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXE5ld3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartner.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXE91clBhcnRuZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartnerAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXE91clBhcnRuZXJBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
