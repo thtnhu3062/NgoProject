@@ -40,9 +40,9 @@
                                     @Html.DisplayFor(modelItem => item.OurpartnerName)
                                 </td>
                                 <td>
-                                    <img src="~/user/images/Logo/@item.OurpartnerLogo" style="width:100px ; height:auto ; border-radius: 10%;">
+                                    <img src="~/user/images/slide/@item.OurpartnerLogo" style="width:100px ; height:auto ; border-radius: 10%;">
                                 </td>
-                                <td>
+                                <td style="white-space:pre-line">
                                             @Html.DisplayFor(modelItem => item.OurpartnerAddress)
                                
                                 </td>
@@ -59,7 +59,11 @@
 
                                 </td>
                                 <td>
-                                    <a asp-action="BannerEdit" asp-route-id="@item.OurpartnerId">Edit</a>
+                             @*        <a asp-action="BannerEdit" asp-route-id="@item.OurpartnerId">Edit</a> *@
+                                    <a href="@Url.Action("DeleteOur","HomeAdmin", new {id = item.OurpartnerId})">Delete</a>
+
+
+                                    <a href="@Url.Action("OurPartnerEdit","HomeAdmin", new {id = item.OurpartnerId})">Edit</a>
 
                                 </td>
 

@@ -7197,6 +7197,18 @@
       "PackagePath": "staticwebassets\\user\\images\\pf4.jpg"
     },
     {
+      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide.JPG\\IMG_20220612_152646.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slide.JPG\\IMG_20220612_152646.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide.JPG\\backgroud.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slide.JPG\\backgroud.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\Ảnh chụp màn hình (2).png",
+      "PackagePath": "staticwebassets\\user\\images\\slide\\Ảnh chụp màn hình (2).png"
+    },
+    {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\BH.jpg",
       "PackagePath": "staticwebassets\\user\\images\\slide\\BH.jpg"
     },
@@ -7235,6 +7247,10 @@
     {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\chuyenhinh3.jpg",
       "PackagePath": "staticwebassets\\user\\images\\slide\\chuyenhinh3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\z4756995415707_88c0733faa5ca3e45950b078dad666cd.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slide\\z4756995415707_88c0733faa5ca3e45950b078dad666cd.jpg"
     },
     {
       "Id": "C:\\Users\\Ngoc Hai\\Documents\\GitHub\\NgoProject\\NgoProject\\wwwroot\\user\\images\\volun.jpg",

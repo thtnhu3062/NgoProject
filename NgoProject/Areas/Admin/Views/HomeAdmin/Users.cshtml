@@ -14,55 +14,35 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Profile</th>
+                                    <th>UserName</th>
                                     <th>Email</th>
                                     <th>Password</th>
                                     <th>Phone</th>
-                                    <th>Created</th>
-                                    <th>Status</th>
+                                    <th>Avatar</th>
+                                    <th>Address</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach(var item in Model)
+                                {
                                 <tr>
-                                    <td>Jacob</td>
-                                    <td>53275531</td>
-                                    <td>jone@gmail.com</td>
-                                    <td>090767728</td>
-                                    <td>12 May 2017</td>
-                                    <td><label class="badge badge-danger">Pending</label></td>
+                                <td>   @Html.DisplayFor(modelItem => item.UserName)</td>
+                                <td>   @Html.DisplayFor(modelItem => item.UserEmail)</td>
+                                <td>   @Html.DisplayFor(modelItem => item.UserPassword)</td>
+                                <td>   @Html.DisplayFor(modelItem => item.UserPhone)</td>
+                                    <td>
+                                <img src="~/user/images/slide/@item.UserAvatar" style="width:100px ; height:auto ; border-radius: 10%;">
+                                    </td>
+                                <td>   @Html.DisplayFor(modelItem => item.UserAddress)</td>
+                                  <td>
+                                 @*    <a href="@Url.Action("DeleteOur","HomeAdmin", new {id = item.OurpartnerId})">Delete</a>
+
+
+                                    <a href="@Url.Action("OurPartnerEdit","HomeAdmin", new {id = item.OurpartnerId})">Edit</a> *@
+
+                                  </td>
                                 </tr>
-                                <tr>
-                                    <td>Messsy</td>
-                                    <td>53275532</td>
-                                    <td>jone@gmail.com</td>
-                                    <td>090767728</td>
-                                    <td>15 May 2017</td>
-                                    <td><label class="badge badge-warning">In progress</label></td>
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>53275533</td>
-                                      <td>jone@gmail.com</td>
-                                    <td>090767728</td>
-                                    <td>14 May 2017</td>
-                                    <td><label class="badge badge-info">Fixed</label></td>
-                                </tr>
-                                <tr>
-                                    <td>Peter</td>
-                                    <td>53275534</td>
-                                    <td>jone@gmail.com</td>
-                                    <td>090767728</td>
-                                    <td>16 May 2017</td>
-                                    <td><label class="badge badge-success">Completed</label></td>
-                                </tr>
-                                <tr>
-                                    <td>Dave</td>
-                                    <td>53275535</td>
-                                    <td>jone@gmail.com</td>
-                                    <td>090767728</td>
-                                    <td>20 May 2017</td>
-                                    <td><label class="badge badge-warning">In progress</label></td>
-                                </tr>
+                              }
                             </tbody>
                         </table>
                     </div>
