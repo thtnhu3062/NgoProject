@@ -1,5 +1,8 @@
 ﻿@model NgoProject.Models.Ourpartner
 
+
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "OurPartnerAdd";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
@@ -9,9 +12,15 @@
 
 <h4>Ourpartner</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="OurPartnerAdd" method="post" enctype="multipart/form-data">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Banner</h4>
+            <p class="card-description">
+                Don't leave the background blank
+            </p>
+
+        <form asp-action="OurPartnerAdd" class="form-sample" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="OurpartnerName" class="control-label"></label>
@@ -19,13 +28,15 @@
                 <span asp-validation-for="OurpartnerName" class="text-danger"></span>
             </div>
             <div class="form-group">
+
                 <label asp-for="OurpartnerAddress" class="control-label"></label>
+                <label asp-for="OurpartnerAddress" class="control-label"> About</label>
                 <input asp-for="OurpartnerAddress" class="form-control" />
                 <span asp-validation-for="OurpartnerAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="OurpartnerLogo" class="control-label"></label>
-                <input asp-for="OurpartnerLogo" class="form-control" type="file" />
+                <input type="file" asp-for="OurpartnerLogo" class="form-control" />
                 <span asp-validation-for="OurpartnerLogo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -47,10 +58,11 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+         </div>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
     </div>
-</div>
+ </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

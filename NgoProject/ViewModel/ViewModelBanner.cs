@@ -21,19 +21,7 @@ namespace NgoProject.ViewModel
         public IEnumerable<Bannerss>? btss { get; set; }
 
     }
-    public class ViewModelNewLetters
-    {
-        public int Id { get; set; }
-
-        [Required(ErrorMessage = "Title can not be bank")]
-        public string? Title { get; set; }
-        [Required(ErrorMessage = "Content can not be bank")]
-        public string? Content { get; set; }
-
-        public string? Image { get; set; }
-
-        public DateTime? DateTime { get; set; }
-    }
+  
 
     
 }

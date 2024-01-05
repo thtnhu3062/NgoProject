@@ -7,7 +7,7 @@ namespace NgoProject.Models
         [Key]
         public IEnumerable<Banner>? Bn1 { get; set; }
         public IEnumerable<Bannerss>? Bn2 { get; set; }
-
+        public IEnumerable<News>? News { get; set; }
         public  IEnumerable<Ourpartner>? Ourpartner { get; set;}
      
     }

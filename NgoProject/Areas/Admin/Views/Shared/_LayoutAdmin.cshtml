@@ -374,28 +374,6 @@
                             </ul>
                         </div>
                     </li>
-
-                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#error1" aria-expanded="false" aria-controls="error1">
-                            <i class="ti-heart menu-icon"></i>
-                            <span class="menu-title">Our Partner</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" >
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link " asp-area="admin" asp-controller="HomeAdmin" asp-action="OurPartner">List Our Partner  </a></li>
-                                 
-                            </ul>
-                        </div>
-                        <div class="collapse" >
-                            <ul class="nav flex-column sub-menu">
-                             
-                                <li class="nav-item"> <a class="nav-link " asp-area="admin" asp-controller="HomeAdmin" asp-action="OurPartnerAdd">Add Our Partner  </a></li>
-
-                            </ul>
-                        </div>
-                    </li>
-
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
                             <i class="icon-contract menu-icon"></i>
@@ -416,13 +394,15 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                             <i class="icon-head menu-icon"></i>
-                            <span class="menu-title">Organizations</span>
+                            <span class="menu-title">Our Partner</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="auth">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="OurPartnerAdd"> Add Organizations </a></li>
-                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="OurPartner"> List Organizations </a></li>
+
+                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="OurPartner"> List Our Partner </a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="OurPartnerAdd"> Create Our Partner </a></li>
+                               
                             </ul>
                         </div>
                     </li>
@@ -498,6 +478,7 @@
             </div>
             <!-- page-body-wrapper ends -->
         </div>
+    </div>
         <!-- container-scroller -->
         <!-- plugins:js -->
         <script src="~/admin/vendors/js/vendor.bundle.base.js"></script>

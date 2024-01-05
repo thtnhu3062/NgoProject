@@ -67,6 +67,9 @@ namespace NgoProject.Migrations
                     b.Property<string>("AdminName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("AdminPassword")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("AdminPhone")
                         .HasColumnType("nvarchar(max)");
 
@@ -218,12 +221,6 @@ namespace NgoProject.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NewsImage1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NewsImage2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NewsImage3")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NewsName")

@@ -18,4 +18,6 @@ public partial class Admin
     public string? AdminAddress { get; set; }
 
     public string? AdminPhone { get; set; }
+
+    public string? AdminPassword { get; set; }
 }

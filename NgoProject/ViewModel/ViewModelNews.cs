@@ -11,10 +11,6 @@ namespace NgoProject.ViewModel
 
         public IFormFile? NewsImage1 { get; set; }
 
-        public IFormFile? NewsImage2 { get; set; }
-
-        public IFormFile? NewsImage3 { get; set; }
-
         public string? NewsContent { get; set; }
 
         public string? NewsDescription { get; set; }

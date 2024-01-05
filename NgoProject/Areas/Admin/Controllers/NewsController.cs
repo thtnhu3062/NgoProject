@@ -33,8 +33,8 @@ namespace NgoProject.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> News()
         {   
-            ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
-            ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
+        //    ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
+        //    ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
 
             return View(await db.News.OrderByDescending(p=>p.NewsId).Include(p=>p.Category).Include(p=>p.Ourpartner).ToListAsync());
 

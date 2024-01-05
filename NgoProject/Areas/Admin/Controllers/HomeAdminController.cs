@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using NgoProject.Models;
 using NgoProject.ViewModel;
 using System.Net;
@@ -38,6 +40,24 @@ namespace NgoProject.Areas.Admin.Controllers
         [Route("AddCategory")]
         [HttpGet]
         public IActionResult AddCategory()
+        {
+
+            return View();
+        }
+
+
+        [Route("Users")]
+        [HttpGet]
+        public async Task<IActionResult> Users()
+        {
+
+            return View(await db.Users.ToListAsync());
+
+        }
+
+        [Route("Donate")]
+        [HttpGet]
+        public IActionResult Donate()
         {
 
             return View();
@@ -140,19 +160,19 @@ namespace NgoProject.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult BannerEdit(int id)
         {
-            
-            Banner? b = db.Banners!.Find(id); 
+
+            Banner? b = db.Banners!.Find(id);
 
 
-              var Vi = new ViewModelBanner
-                {
-                    Id = b.IdOne,
-                    Title = b.TitleOne,
-                    Content = b.ContentOne,
-                 
+            var Vi = new ViewModelBanner
+            {
+                Id = b.IdOne,
+                Title = b.TitleOne,
+                Content = b.ContentOne,
 
-                };
-                return View(Vi);
+
+            };
+            return View(Vi);
         }
 
 
@@ -210,7 +230,7 @@ namespace NgoProject.Areas.Admin.Controllers
 
 
                 // db.Set<Banner>().Update(p);
-
+              
                 db.Attach(p).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Banner", "HomeAdmin");
@@ -242,7 +262,7 @@ namespace NgoProject.Areas.Admin.Controllers
         [Route("OurPartnerAdd")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> OurPartnerAdd( ViewModelOurPartner model)
+        public async Task<IActionResult> OurPartnerAdd(ViewModelOurPartner model)
         {
 
             if (ModelState.IsValid)
@@ -264,15 +284,15 @@ namespace NgoProject.Areas.Admin.Controllers
 
                 Ourpartner p = new Ourpartner
                 {
-                
-                   OurpartnerName  = model.OurpartnerName,
+
+                    OurpartnerName = model.OurpartnerName,
                     OurpartnerPhone = model.OurpartnerPhone,
                     OurpartnerAddressWeb = model.OurpartnerAddressWeb,
                     OurpartnerMail = model.OurpartnerMail,
                     OurpartnerAddress = model.OurpartnerAddress,
                     OurpartnerLogo = imageFilename
 
-                    
+
 
                 };
 
@@ -286,5 +306,81 @@ namespace NgoProject.Areas.Admin.Controllers
             return View(model);
 
         }
+        [Route("DeleteOur")]
+
+        public async Task<ActionResult> DeleteOur(int id)
+        {
+            var cus = await db.Ourpartners!.SingleOrDefaultAsync(x => x.OurpartnerId == id);
+
+            db.Ourpartners.Remove(cus!);
+            db.SaveChanges();
+            return RedirectToAction("OurPartner", "HomeAdmin");
+        }
+
+        [Route("csxc094")]
+        [HttpGet]
+        public ActionResult OurPartnerEdit(int id)
+        {
+            //  Banner? b  =  await db.Banners!.SingleOrDefaultAsync(x => x.IdOne == id);
+            Ourpartner? k = db.Ourpartners!.Find(id);
+
+            //var Vie = new ViewModelBanner
+            //{
+            //    Id = k.IdTwo,
+            //    Title = k.TitleTwo,
+            //    Content = k.ContentTwo,
+
+            //};
+            return View(k);
+        }
+
+        [Route("csxc094")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OurPartnerEdit(int id ,  ViewModelOurPartner model)
+        {
+            Ourpartner? k = db.Ourpartners!.Find(id);
+
+            if (ModelState.IsValid)
+            {
+                string imageFilename = string.Empty;
+                if (model.OurpartnerLogo != null && model.OurpartnerLogo.Length > 0)
+                {
+                    imageFilename = model.OurpartnerLogo.FileName;
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide" );
+                    if (!Directory.Exists(imgFolder))
+                    {
+                        Directory.CreateDirectory(imgFolder);
+
+                    }
+                    var imgPath = Path.Combine(imgFolder, imageFilename);
+                    var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
+                    await model.OurpartnerLogo.CopyToAsync(fs);
+                }
+
+                Ourpartner p = new Ourpartner
+                {
+                    OurpartnerId = model.OurpartnerId,
+                    OurpartnerName = model.OurpartnerName,
+                    OurpartnerPhone = model.OurpartnerPhone,
+                    OurpartnerAddressWeb = model.OurpartnerAddressWeb,
+                    OurpartnerMail = model.OurpartnerMail,
+                    OurpartnerAddress = model.OurpartnerAddress,
+                    OurpartnerLogo = imageFilename
+
+                };
+
+
+               //  db.Set<Ourpartner>().Update(p); nay la add 
+                db.Entry(p).State = EntityState.Modified;
+              //  db.Attach(p).State = EntityState.Modified;
+
+                await db.SaveChangesAsync();
+                return RedirectToAction("OurPartner", "HomeAdmin");
+            }
+            return View(model);
+        }
+
+
     }
 }

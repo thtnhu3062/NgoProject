@@ -13,10 +13,6 @@ public partial class News
 
     public string? NewsImage1 { get; set; }
 
-    public string? NewsImage2 { get; set; }
-
-    public string? NewsImage3 { get; set; }
-
     public string? NewsContent { get; set; }
 
     public string? NewsDescription { get; set; }
