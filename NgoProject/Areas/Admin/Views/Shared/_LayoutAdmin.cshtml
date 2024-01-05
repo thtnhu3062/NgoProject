@@ -365,12 +365,12 @@
                         </a>
                         <div class="collapse" id="tables">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="AddNews">Create news</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="News" asp-action="NewsAdd">Create news</a></li>
                             </ul>
                         </div>
                         <div class="collapse" id="tables">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="News">List of news</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="News" asp-action="News">List of news</a></li>
                             </ul>
                         </div>
                     </li>
@@ -421,8 +421,8 @@
                         </a>
                         <div class="collapse" id="auth">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/samples/login.html"> Add Organizations </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/samples/register.html"> List Organizations </a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="OurPartnerAdd"> Add Organizations </a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="OurPartner"> List Organizations </a></li>
                             </ul>
                         </div>
                     </li>

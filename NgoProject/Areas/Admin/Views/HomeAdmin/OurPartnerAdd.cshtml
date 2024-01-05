@@ -1,59 +1,56 @@
-﻿@model NgoProject.ViewModel.ViewModelOurPartner
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@model NgoProject.Models.Ourpartner
+
 @{
     ViewData["Title"] = "OurPartnerAdd";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h1>OurPartnerAdd</h1>
 
-
-<div class="col-12 grid-margin stretch-card">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">OurPartner</h4>
-            <p class="card-description">
-                Required data entry
-            </p>
-            @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-            <form class="forms-sample" asp-action="OurPartnerAdd" method="post" enctype="multipart/form-data">
-
-                <div class="form-group" hidden>
-                    <label for="exampleInputName1" asp-for="OurpartnerId">ID</label>
-                    <input type="text" class="form-control" asp-for="OurpartnerId" name="OurpartnerId">
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleInputName1" asp-for="OurpartnerName">Name</label>
-                    <input type="text" class="form-control" asp-for="OurpartnerName" name="OurpartnerName">
-                </div>
-           
-                <div class="form-group">
-                    <label for="exampleInputName1" asp-for="OurpartnerPhone">Phone</label>
-                    <input type="text" class="form-control" asp-for="OurpartnerPhone" name="OurpartnerPhone">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName1" asp-for="OurpartnerAddressWeb">AddressWeb</label>
-                    <input type="text" class="form-control" asp-for="OurpartnerAddressWeb" name="OurpartnerAddressWeb">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName1" asp-for="OurpartnerMail">Mail</label>
-                    <input type="text" class="form-control" asp-for="OurpartnerMail" name="OurpartnerMail">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName1" asp-for="OurpartnerAddress">About</label>
-                    <input type="text" style="width:100% ;height:100px" class="form-control" asp-for="OurpartnerAddress" name="OurpartnerAddress">
-                </div>
-                <div class="form-group">
-                    <label asp-for="OurpartnerLogo">Upload BackGround</label>
-                    <input type="file" asp-for="OurpartnerLogo" name="OurpartnerLogo" class="file-upload-default">
-                    <span asp-validation-for="OurpartnerLogo" class="text-danger"></span>
-
-                </div>
-
-                <input type="submit" value="Create" class="btn btn-primary mr-2" />
-                <button class="btn btn-light">Cancel</button>
-
-            </form>
-
-        </div>
+<h4>Ourpartner</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="OurPartnerAdd" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OurpartnerName" class="control-label"></label>
+                <input asp-for="OurpartnerName" class="form-control" />
+                <span asp-validation-for="OurpartnerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OurpartnerAddress" class="control-label"></label>
+                <input asp-for="OurpartnerAddress" class="form-control" />
+                <span asp-validation-for="OurpartnerAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OurpartnerLogo" class="control-label"></label>
+                <input asp-for="OurpartnerLogo" class="form-control" type="file" />
+                <span asp-validation-for="OurpartnerLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OurpartnerPhone" class="control-label"></label>
+                <input asp-for="OurpartnerPhone" class="form-control" />
+                <span asp-validation-for="OurpartnerPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OurpartnerAddressWeb" class="control-label"></label>
+                <input asp-for="OurpartnerAddressWeb" class="form-control" />
+                <span asp-validation-for="OurpartnerAddressWeb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OurpartnerMail" class="control-label"></label>
+                <input asp-for="OurpartnerMail" class="form-control" />
+                <span asp-validation-for="OurpartnerMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 </div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

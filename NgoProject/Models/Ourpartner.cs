@@ -21,5 +21,5 @@ public partial class Ourpartner
 
     public string? OurpartnerMail { get; set; }
 
- //   public virtual ICollection<News> News { get; set; } = new List<News>();
+  public virtual ICollection<News> News { get; set; } = new List<News>();
 }

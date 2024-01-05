@@ -32,29 +32,12 @@ namespace NgoProject.Areas.Admin.Controllers
         [Route("Category")]
         public IActionResult Category()
         {
-
             var lst = db.Categories.ToList();
             return View(lst);
         }
         [Route("AddCategory")]
         [HttpGet]
         public IActionResult AddCategory()
-        {
-
-            return View();
-        }
-
-        [Route("Users")]
-        [HttpGet]
-        public IActionResult Users()
-        {
-
-            return View();
-        }
-
-        [Route("Donate")]
-        [HttpGet]
-        public IActionResult Donate()
         {
 
             return View();
@@ -97,59 +80,6 @@ namespace NgoProject.Areas.Admin.Controllers
 
         }
 
-        [Route("News")]
-        public IActionResult News()
-        {
-
-            return View();
-        }
-        [Route("AddNews")]
-        [HttpGet]
-        public IActionResult AddNews()
-        {
-
-            return View();
-        }
-
-
-        //[Route("AddCategory")]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult AddCategory(Category sp)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Categories.Add(sp);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Category");
-        //    }
-        //    return View(sp);
-
-        //}
-
-        //[Route("EditCategory")]
-        //[HttpGet]
-        //public IActionResult EditCategory(int id)
-        //{
-        //    var cate = db.Categories.Find(id);
-        //    return View(cate);
-        //}
-        //[Route("EditCategory")]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult EditCategory(Category cate)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(cate).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Category", "HomeAdmin");
-        //    }
-        //    return View(cate);
-
-        //}
-
-
         [Route("Banner")]
         [HttpGet]
         public IActionResult Banner()
@@ -162,32 +92,7 @@ namespace NgoProject.Areas.Admin.Controllers
             });
 
         }
-        //[Route("BannerEdit")]
-        //[HttpGet("BannerEdit")]
-        //public ActionResult BannerEdit(int id)
-        //{
-        //    //  Banner? b  =  await db.Banners!.SingleOrDefaultAsync(x => x.IdOne == id);
-        //    Banner? b = db.Banners!.Find(id);
-
-        //    var Vi = new ViewModelBanner
-        //    {
-        //        Id = b.IdOne,
-        //        Title = b.TitleOne,
-        //        Content = b.ContentOne,
-
-        //    };
-        //    return View(Vi);
-        //    //var query = from p in db.Banners where p.IdOne == 1 select p;
-        //    //var list = query.ToList();
-
-        //    //return View(new ViewModel.ViewModelBanner
-        //    //{
-        //    //    //bt =  query.ToList(),
-
-        //    //    bt = db.Banners!.ToList(),
-
-        //    //});
-        //}
+     
 
         [Route("BannerEdit")]
         [HttpPost]
@@ -374,7 +279,7 @@ namespace NgoProject.Areas.Admin.Controllers
 
                 // db.Set<Banner>().Update(p);
 
-                db.Set<Ourpartner>().Add(p);
+                db.Ourpartners!.Add(p);
                 await db.SaveChangesAsync();
                 return RedirectToAction("OurPartner", "HomeAdmin");
             }
