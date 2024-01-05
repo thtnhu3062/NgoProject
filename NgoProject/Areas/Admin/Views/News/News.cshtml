@@ -51,10 +51,10 @@
                 @Html.DisplayFor(modelItem => item.NewsDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Ourpartner.OurpartnerName)
+                @Html.DisplayFor(modelItem => item.Ourpartner!.OurpartnerName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.NewsId">Edit</a> |

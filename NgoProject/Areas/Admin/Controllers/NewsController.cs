@@ -31,12 +31,14 @@ namespace NgoProject.Areas.Admin.Controllers
 
         [Route("News")]
         [HttpGet]
-        public async Task<IActionResult> News()
+        public async Task<IActionResult> News(string cname)
         {   
+            var list = await db.News.OrderByDescending(p=>p.NewsId).Where(c=>c.Category.CategoryName.Contains(cname)).ToListAsync();
         //    ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
         //    ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
 
-            return View(await db.News.OrderByDescending(p=>p.NewsId).Include(p=>p.Category).Include(p=>p.Ourpartner).ToListAsync());
+            //return View(await db.News.OrderByDescending(p=>p.NewsId).Where(c=>c.Category.CategoryName.Contains(cname)).ToListAsync());
+            return View(list);
 
 
         }
@@ -54,8 +56,7 @@ namespace NgoProject.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> NewsAdd(ViewModelNews model)
         {
-            ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
-            ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
+
 
             if (ModelState.IsValid)
             {
@@ -81,8 +82,6 @@ namespace NgoProject.Areas.Admin.Controllers
                     NewsContent = model.NewsContent,
                     NewsDescription = model.NewsDescription,
                     NewsImage1 = imageFilename1,
-                    CategoryId = model.CategoryId,
-                    OurpartnerId = model.OurpartnerId,
 
                 };
 
