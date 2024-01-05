@@ -9,105 +9,107 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NgoProject
 build_property.RootNamespace = NgoProject
-build_property.ProjectDir = F:\Project3\NgoProject\NgoProject\
+build_property.ProjectDir = C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\Project3\NgoProject\NgoProject
+build_property.MSBuildProjectDirectory = C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/AddCategory.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/AddCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEFkZENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Banner.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Banner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEJhbm5lci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/BannerEdit.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/BannerEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEJhbm5lckVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/BannerEdit2.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/BannerEdit2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEJhbm5lckVkaXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Category.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Category.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Donate.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Donate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERvbmF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/EditCategory.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/EditCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEVkaXRDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Index.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartner.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXE91clBhcnRuZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartnerAdd.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartnerAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXE91clBhcnRuZXJBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartnerEdit.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartnerEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXE91clBhcnRuZXJFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Users.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/News/News.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/News/News.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c1xOZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/News/NewsAdd.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/News/NewsAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c1xOZXdzQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/Home/Privacy.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/Shared/Error.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/Shared/_Layout.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/User/DetailsOur.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/User/DetailsOur.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzT3VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/User/Index.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/User/OurPartner.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/User/OurPartner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPdXJQYXJ0bmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/User/Register.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/_ViewImports.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/_ViewStart.cshtml]
+[C:/Users/Ngoc Hai/Documents/GitHub/NgoProject/NgoProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
