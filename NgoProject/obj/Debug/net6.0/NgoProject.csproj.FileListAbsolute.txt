@@ -1068,10 +1068,8 @@ C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System
 C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
 C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Users\Ngoc Hai\Documents\GitHub\NgoProject\NgoProject\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
-F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.Mvc.dll
-F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.Razor.dll
-F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.Helpers.dll
-F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
-F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
-F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\System.Web.WebPages.dll
-F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+F:\Project3\NgoProject\NgoProject\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

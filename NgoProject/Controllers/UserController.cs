@@ -20,7 +20,6 @@ namespace NgoProject.Controllers
             this.db = db;
             this.env = env;
         }
-
         [HttpGet]
         public IActionResult Index()
         {
@@ -41,65 +40,6 @@ namespace NgoProject.Controllers
         public ActionResult VoiGet()
         {
            return View();
-        }
-
-      
-
-
-        public IActionResult Donate()
-        {
-            return View();
-        }
-        [Route("User")]
-        public IActionResult Register()
-        {
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(ViewModelRegister model)
-        {
-
-            if (ModelState.IsValid)
-            {
-                string imageFilename = string.Empty;
-                if (model.UserAvatar != null && model.UserAvatar.Length > 0)
-                {
-                    imageFilename = model.UserAvatar.FileName;
-                    var imgFolder = Path.Combine(env.WebRootPath, "user/images/slide");
-                    if (!Directory.Exists(imgFolder))
-                    {
-                        Directory.CreateDirectory(imgFolder);
-
-                    }
-                    var imgPath = Path.Combine(imgFolder, imageFilename);
-                    var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
-                    await model.UserAvatar.CopyToAsync(fs);
-                }
-
-                User p = new User
-                {
-
-                    UserName = model.UserName,
-                    UserEmail = model.UserEmail,
-                    UserAddress = model.UserAddress,
-                    UserPassword = model.UserPassword,
-                    UserPhone = model.UserPhone,
-
-                    UserAvatar = imageFilename
-
-
-
-                };
-
-
-                // db.Set<Banner>().Update(p);
-
-                db.Set<User>().Add(p);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index", "User");
-            }
-            return View(model);
         }
 
 

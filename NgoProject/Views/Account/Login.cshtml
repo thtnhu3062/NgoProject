@@ -1,0 +1,44 @@
+﻿@model NgoProject.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="volunteer-section section-padding" id="section_4">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-12">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <form class="custom-form volunteer-form mb-5 mb-lg-0" asp-controller="Account" asp-action="Login" method="post">
+                    <h3 class="mb-4">Login</h3>
+
+
+                    <div class="col-lg-12 col-12">
+                        <input asp-for="UserName"  class="form-control" placeholder="Enter Your UserName" required>
+                    </div>
+
+                    <div class="col-lg-12 col-12">
+                        <input asp-for="UserPassword" type="password" class="form-control" placeholder="Enter Your Password" required>
+                    </div>
+
+                    <button type="submit" class="form-control">Login</button>
+
+                    <i class="bi-chat-square-heart-fill ms-auto">You no have Account?<a asp-controller="Account" asp-action="Create">Create</a></i>
+                </form>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <img src="~/user/images/volun.jpg" class="volunteer-image img-fluid" alt="">
+
+                <div class="custom-block-body text-center">
+                    <h4 class="text-white mt-lg-3 mb-lg-3">Volunteering</h4>
+
+                    <p class="text-white">Green shoots sprout</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+

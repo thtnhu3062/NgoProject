@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace NgoProject.Models;
 
-public partial class NgoProjectContext : DbContext
+public partial class NgoProjectContext : IdentityDbContext<AppModelUser>
 {
     public NgoProjectContext()
     {
