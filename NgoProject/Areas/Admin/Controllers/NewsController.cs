@@ -54,7 +54,8 @@ namespace NgoProject.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> NewsAdd(ViewModelNews model)
         {
-
+            ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
+            ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
 
             if (ModelState.IsValid)
             {
@@ -80,6 +81,8 @@ namespace NgoProject.Areas.Admin.Controllers
                     NewsContent = model.NewsContent,
                     NewsDescription = model.NewsDescription,
                     NewsImage1 = imageFilename1,
+                    CategoryId = model.CategoryId,
+                    OurpartnerId = model.OurpartnerId,
 
                 };
 
