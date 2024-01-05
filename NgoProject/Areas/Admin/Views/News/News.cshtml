@@ -1,0 +1,67 @@
+﻿@model IEnumerable<NgoProject.Models.News>
+
+
+@{
+    ViewData["Title"] = "News";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>News</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsImage1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ourpartner)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsImage1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ourpartner.OurpartnerName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NewsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NewsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NewsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
