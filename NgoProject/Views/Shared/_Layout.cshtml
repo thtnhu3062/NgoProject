@@ -93,7 +93,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" asp-controller="User" asp-action="OurPartner">Our Partners</a>
+                        <a class="nav-link" asp-controller="User" asp-action="OurPartner">Our Partners</a>
                     </li>
 
                     <li class="nav-item">
@@ -102,7 +102,7 @@
                     @if(User.Identity?.IsAuthenticated ?? false)
                     {
                         <li class="nav-item">
-                            <h5>@User.Identity.Name</h5>
+                            <p>@User.Identity.Name</p>
                             <a class="nav-link " asp-controller="Account" asp-action="Logout">LogOut</a>
                         </li>
                     }
@@ -110,6 +110,7 @@
                     {
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Account" asp-action="Login">REGISTER</a>
+
                         </li>
                     }
 
@@ -123,7 +124,7 @@
                     @if (User.Identity?.IsAuthenticated ?? false)
                     {
                         <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn btn" >Donate</a>
+                            <a class="nav-link custom-btn custom-border-btn btn" asp-controller="Donate" asp-action="AddDonate">Donate</a>
                         </li>
                     }else{
                         <li class="nav-item ms-3">

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<NgoProject.Models.News>
-
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "News";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
-
+@Html.AntiForgeryToken()
 <h1>News</h1>
 
 <p>
@@ -41,9 +41,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.NewsName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NewsImage1)
-            </td>
+                <td>
+                    <img src="~/user/images/slide/@item.NewsImage1" style="width:100px ; height:auto ; border-radius: 10%;">
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NewsContent)
             </td>
@@ -51,15 +51,14 @@
                 @Html.DisplayFor(modelItem => item.NewsDescription)
             </td>
             <td>
-                    @Html.DisplayFor(modelItem => item.Category)
+              @Html.DisplayFor(modelItem => item.Category!.CategoryName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ourpartner!.OurpartnerName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.NewsId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.NewsId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.NewsId">Delete</a>
+                    <a href="@Url.Action("NewsEdit","News", new {id = item.NewsId})">Edit</a> |
+                    <a href="@Url.Action("DeleteNews","News", new {id = item.NewsId})">Delete</a>
             </td>
         </tr>
 }

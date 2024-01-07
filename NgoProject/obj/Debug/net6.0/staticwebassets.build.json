@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3JBD9bzf+Na5Cavd49LYf79hYfxMlepp/u09hdCpbKg=",
+  "Hash": "0Lv3JfdGlAfwE0g8i7Uzgnr75i0vgIqV3GAVGXJU4Ig=",
   "Source": "NgoProject",
   "BasePath": "_content/NgoProject",
   "Mode": "Default",
@@ -30855,6 +30855,23 @@
       "OriginalItemSpec": "wwwroot\\user\\images\\slide\\TIE05295.jpg"
     },
     {
+      "Identity": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\TIE05319.jpg",
+      "SourceId": "NgoProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\",
+      "BasePath": "_content/NgoProject",
+      "RelativePath": "user/images/slide/TIE05319.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user\\images\\slide\\TIE05319.jpg"
+    },
+    {
       "Identity": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\TIE05366.jpg",
       "SourceId": "NgoProject",
       "SourceType": "Discovered",
@@ -30870,6 +30887,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user\\images\\slide\\TIE05366.jpg"
+    },
+    {
+      "Identity": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\TIE05458.jpg",
+      "SourceId": "NgoProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\",
+      "BasePath": "_content/NgoProject",
+      "RelativePath": "user/images/slide/TIE05458.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user\\images\\slide\\TIE05458.jpg"
     },
     {
       "Identity": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\TIE05534.jpg",

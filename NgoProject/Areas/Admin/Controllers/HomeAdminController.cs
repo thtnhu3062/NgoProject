@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Microsoft.Extensions.Hosting;
 using NgoProject.Models;
 using NgoProject.ViewModel;
@@ -46,23 +47,6 @@ namespace NgoProject.Areas.Admin.Controllers
         }
 
 
-        [Route("Users")]
-        [HttpGet]
-        public async Task<IActionResult> Users()
-        {
-
-            return View(await db.Users.ToListAsync());
-
-        }
-
-        [Route("Donate")]
-        [HttpGet]
-        public IActionResult Donate()
-        {
-
-            return View();
-        }
-
         [Route("AddCategory")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -98,6 +82,26 @@ namespace NgoProject.Areas.Admin.Controllers
             }
             return View(cate);
 
+        }
+
+        [Route("DeleteCategory")]
+        [HttpGet]
+        public async Task<ActionResult> DeleteCategory(int id)
+
+        {
+            TempData["Message"] = "";
+            var cats = await db.News.Where(x => x.NewsId == id).ToListAsync();
+            if (cats.Count > 0)
+            {
+                TempData["Message"] = "Không xóa dc";
+                return RedirectToAction("Category", "HomeAdmin");
+
+            }
+            var cus = await db.Categories.SingleOrDefaultAsync(x => x.CategoryId == id);
+            db.Categories.Remove(cus!);
+            db.SaveChanges();
+            TempData["Message"] = "xóa san pham thanh cong";
+            return RedirectToAction("Category", "HomeAdmin");
         }
 
         [Route("Banner")]
@@ -305,6 +309,7 @@ namespace NgoProject.Areas.Admin.Controllers
             }
             return View(model);
 
+
         }
         [Route("DeleteOur")]
 
@@ -316,7 +321,6 @@ namespace NgoProject.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("OurPartner", "HomeAdmin");
         }
-
         [Route("csxc094")]
         [HttpGet]
         public ActionResult OurPartnerEdit(int id)
@@ -381,6 +385,28 @@ namespace NgoProject.Areas.Admin.Controllers
             return View(model);
         }
 
+        [Route("user")]
+        [HttpGet]
+        public async Task<IActionResult> user()
+        {
+            //return View(new Models.Ienumerable
+            //{
+
+            //    Ourpartner = db.Ourpartners.ToList(),
+            //});
+            return View(await db.Users.ToListAsync());
+
+
+        }
+
+        //[Route("Users")]
+        //[HttpGet]
+        //public async Task<IActionResult> Users()
+        //{
+
+        //    return View(await db.Users.ToListAsync());
+
+        //}
 
     }
 }

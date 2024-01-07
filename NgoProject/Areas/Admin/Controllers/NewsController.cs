@@ -31,13 +31,9 @@ namespace NgoProject.Areas.Admin.Controllers
 
         [Route("News")]
         [HttpGet]
-        public async Task<IActionResult> News(string cname)
+        public async Task<IActionResult> News()
         {   
-            var list = await db.News.OrderByDescending(p=>p.NewsId).Where(c=>c.Category.CategoryName.Contains(cname)).ToListAsync();
-        //    ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
-        //    ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
-
-            //return View(await db.News.OrderByDescending(p=>p.NewsId).Where(c=>c.Category.CategoryName.Contains(cname)).ToListAsync());
+            var list = await db.News.OrderByDescending(p=>p.NewsId).Include(p=>p.Category).Include(p => p.Ourpartner).ToListAsync();
             return View(list);
 
 
@@ -82,6 +78,8 @@ namespace NgoProject.Areas.Admin.Controllers
                     NewsContent = model.NewsContent,
                     NewsDescription = model.NewsDescription,
                     NewsImage1 = imageFilename1,
+                    CategoryId = model.CategoryId,  
+                    OurpartnerId = model.OurpartnerId,
 
                 };
 
@@ -92,6 +90,68 @@ namespace NgoProject.Areas.Admin.Controllers
             }
             return View(model);
 
+        }
+        [Route("NewsEdit")]
+        [HttpGet]
+        public ActionResult NewsEdit(int id)
+        {
+            News? k = db.News!.Find(id);
+            ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
+            ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
+
+            return View(k);
+        }
+        [Route("NewsEdit")]
+        [HttpPost]
+        public async Task<IActionResult> NewsEdit(int id, ViewModelNews model)
+        {
+            News? k = db.News!.Find(id);
+
+            if (ModelState.IsValid)
+            {
+                string imageFilename = string.Empty;
+                if (model.NewsImage1 != null && model.NewsImage1.Length > 0)
+                {
+                    imageFilename = model.NewsImage1.FileName;
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
+                    if (!Directory.Exists(imgFolder))
+                    {
+                        Directory.CreateDirectory(imgFolder);
+
+                    }
+                    var imgPath = Path.Combine(imgFolder, imageFilename);
+                    var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
+                    await model.NewsImage1.CopyToAsync(fs);
+                }
+
+                News p = new News
+                {
+                    NewsName = model.NewsName,
+                    NewsContent = model.NewsContent,
+                    NewsDescription = model.NewsDescription,
+                    NewsImage1 = imageFilename,
+                    CategoryId = model.CategoryId,
+                    OurpartnerId = model.OurpartnerId,
+
+                };
+
+
+                db.Entry(p).State = EntityState.Modified;
+
+                await db.SaveChangesAsync();
+                return RedirectToAction("News", "News");
+            }
+            return View(model);
+        }
+        [Route("DeleteNews")]
+
+        public async Task<ActionResult> DeleteNews(int id)
+        {
+            var cus = await db.News!.SingleOrDefaultAsync(x => x.NewsId == id);
+
+            db.News.Remove(cus!);
+            db.SaveChanges();
+            return RedirectToAction("News", "News");
         }
     }
 

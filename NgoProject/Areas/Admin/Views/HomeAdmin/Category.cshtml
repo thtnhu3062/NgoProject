@@ -11,6 +11,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">List Of Category</h4>
+            <p>@TempData["Message"]</p>
             <div class="table-responsive pt-3">
                 <table class="table table-bordered">
 
@@ -53,7 +54,7 @@
                                    
                                 </td>
                                 <td>
-                                    <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                                    <a href="@Url.Action("DeleteCategory","HomeAdmin", new {id = item.CategoryId})">Delete</a>
                                 </td>
 
                             </tr>
