@@ -16,8 +16,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = F:\Project3\NgoProject\NgoProject
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEFib3V0VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/AddCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEFkZENhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/AddQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEFkZFF1ZXN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Banner.cshtml]
@@ -40,12 +48,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERvbmF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/EditAbout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEVkaXRBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/EditCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEVkaXRDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/EditQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEVkaXRRdWVzdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXGxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/OurPartner.cshtml]
@@ -108,6 +128,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project3/NgoProject/NgoProject/Views/User/DetailsNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzTmV3cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project3/NgoProject/NgoProject/Views/User/DetailsOur.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzT3VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -116,8 +140,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project3/NgoProject/NgoProject/Views/User/IndexAboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleEFib3V0VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project3/NgoProject/NgoProject/Views/User/OurPartner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPdXJQYXJ0bmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project3/NgoProject/NgoProject/Views/User/SearchNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTZWFyY2hOZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project3/NgoProject/NgoProject/Views/_ViewImports.cshtml]

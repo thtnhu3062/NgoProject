@@ -19,10 +19,5 @@ namespace NgoProject.ViewModel
 
         public int? OurpartnerId { get; set; }
 
-        public virtual Category? Category { get; set; }
-
-        public virtual ICollection<Donate> Donates { get; set; } = new List<Donate>();
-
-        public virtual Ourpartner? Ourpartner { get; set; }
     }
 }

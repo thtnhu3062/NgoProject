@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Hosting;
@@ -60,9 +61,69 @@ namespace NgoProject.Controllers
         //{
 
         //}
+        [HttpGet]
+        public ActionResult ListNews()
+        {
 
-       
-       
+            return View(db.News.ToList());
+
+        }
+        [HttpGet]
+        public ActionResult DetailsNews(int id)
+        {
+            News? k = db.News.Find(id);
+            return View(k);
+        }
+
+        public ActionResult SearchNews(string searchString, int categoryID = 0)
+        {
+            var cat = from c in db.Categories select c;
+            ViewBag.categoryID = new SelectList(cat, "CategoryId", "CategoryName");
+            var links = from l in db.News
+                        join c in db.Categories on l.CategoryId equals c.CategoryId
+                        select new
+                        {
+                            l.NewsId,
+                            l.NewsName,
+                            l.NewsImage1,
+                            l.NewsContent,
+                            l.NewsDescription,
+                            l.CategoryId,
+                            c.CategoryName
+                        };
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                links = links.Where(s => s.NewsName.Contains(searchString));
+            }
+            if (categoryID != 0)
+            {
+                links = links.Where(x => x.CategoryId == categoryID);
+            }
+            List<News> listNews = new List<News>();
+            foreach (var item in links)
+            {
+                News news = new News();
+                news.CategoryId = item.CategoryId;
+                news.NewsContent = item.NewsContent;
+                news.NewsDescription = item.NewsDescription;
+                news.NewsId = item.NewsId;
+                news.NewsName = item.NewsName;
+                news.NewsImage1 = item.NewsImage1;
+                listNews.Add(news);
+            }
+            return View(listNews);
+        }
+
+        public IActionResult IndexAboutUs()
+        {
+
+            return View(new Models.Ienumerable
+            {
+                Abu = db.Aboutus.ToList(),
+                questionAbouts = db.qa.ToList(),
+            });
+
+        }
 
     }
 }

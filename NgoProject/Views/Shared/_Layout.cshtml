@@ -92,12 +92,13 @@
 
 
 
+
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="User" asp-action="OurPartner">Our Partners</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_3">Causes</a>
+                        <a class="nav-link" asp-controller="User" asp-action="SearchNews">Causes</a>
                     </li>
                     @if(User.Identity?.IsAuthenticated ?? false)
                     {
@@ -115,12 +116,12 @@
                     }
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#section_2">About Us</a>
+                        <a class="nav-link" asp-controller="User" asp-action="IndexAboutUs">About Us</a>
                     </li>
 
-                    <li class="nav-item">
+@*                    <li class="nav-item">
                         <a class="nav-link click-scroll" href="#section_6">Help Centre</a>
-                    </li>
+                    </li>*@
                     @if (User.Identity?.IsAuthenticated ?? false)
                     {
                         <li class="nav-item ms-3">

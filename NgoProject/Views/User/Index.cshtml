@@ -84,7 +84,7 @@
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
                     <div class="featured-block d-flex justify-content-center align-items-center">
-                        <a href="donate.html" class="d-block">
+                        <a href="" class="d-block">
                             <img src="~/user/images/icons/hands.png" class="featured-block-image img-fluid" alt="">
 
                             <p class="featured-block-text">Become a <strong>volunteer</strong></p>
@@ -94,7 +94,7 @@
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
                     <div class="featured-block d-flex justify-content-center align-items-center">
-                        <a href="donate.html" class="d-block">
+                        <a href="" class="d-block">
                             <img src="~/user/images/icons/heart.png" class="featured-block-image img-fluid" alt="">
 
                             <p class="featured-block-text"><strong>Caring</strong> Earth</p>
@@ -104,7 +104,7 @@
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
                     <div class="featured-block d-flex justify-content-center align-items-center">
-                        <a href="donate.html" class="d-block">
+                        <a href="" class="d-block">
                             <img src="~/user/images/icons/receive.png" class="featured-block-image img-fluid" alt="">
 
                             <p class="featured-block-text">Make a <strong>Donation</strong></p>
@@ -114,7 +114,7 @@
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
                     <div class="featured-block d-flex justify-content-center align-items-center">
-                        <a href="donate.html" class="d-block">
+                        <a href="" class="d-block">
                             <img src="~/user/images/icons/scholarship.png" class="featured-block-image img-fluid" alt="">
 
                             <p class="featured-block-text"><strong>Scholarship</strong> Program</p>
@@ -233,7 +233,7 @@
             </div>
         </div>
     </section>
-
+@*
     <section class="cta-section section-padding section-bg">
         <div class="container">
             <div class="row justify-content-center align-items-center">
@@ -250,7 +250,7 @@
 
             </div>
         </div>
-    </section>
+    </section>*@
 
 
     <section class="section-padding" id="section_3">
@@ -270,12 +270,12 @@
                             <div class="custom-block-body">
                                     <h5 class="mb-3"></h5>
 
-                                <p>Learning viability difficulties</p>
+                                    <h4>@item.Category.CategoryName</h4>
 
-                                <div class="progress mt-4">
+@*                                <div class="progress mt-4">
                                     <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-
+                                </div>*@
+@*
                                 <div class="d-flex align-items-center my-2">
                                     <p class="mb-0">
                                         <strong>Raised:</strong>
@@ -286,10 +286,19 @@
                                         <strong>Goal:</strong>
                                         $32,000
                                     </p>
-                                </div>
+                                </div>*@
                             </div>
+                                @if (User.Identity?.IsAuthenticated ?? false)
+                                {
 
-                            <a href="donate.html" class="custom-btn btn">Donate now</a>
+                                    <a class="custom-btn btn" asp-controller="Donate" asp-action="AddDonate">Donate now</a>
+
+                                }
+                                else
+                                {
+
+                                    <a class="custom-btn btn" asp-controller="Account" asp-action="Login">Donate</a>
+                                }
                         </div>
                     </div>
                 </div>
@@ -302,7 +311,7 @@
 
   
 
-    <section class="news-section section-padding" id="section_5">
+    @*<section class="news-section section-padding" id="section_5">
         <div class="container">
             <div class="row">
 
@@ -535,7 +544,7 @@
 
             </div>
         </div>
-    </section>
+    </section>*@
 
 
     <section class="testimonial-section section-padding section-bg">

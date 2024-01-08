@@ -1,0 +1,48 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model NgoProject.ViewModel.ViewModelAbout
+
+@{
+    ViewData["Title"] = "AboutUsEdit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">About Us</h4>
+            <p class="card-description">
+                Don't leave the background blank
+            </p>
+
+            <form class="forms-sample" asp-action="EditAbout" method="post" enctype="multipart/form-data">
+
+                <div class="form-group" hidden>
+                    <label for="exampleInputName1" asp-for="Id">ID</label>
+                    <input type="text" class="form-control" asp-for="Id">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1" asp-for="Title">Title</label>
+                    <input type="text" class="form-control" asp-for="Title" name="Title">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1" asp-for="Content">Content</label>
+                    <input type="text" style="width:100% ;height:100px" class="form-control" asp-for="Content" name="Content">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Photo">Upload File</label>
+                    <span><a href="@Model.Photo">@Model.Photo</a></span>
+                    <div id="chooseFile"><input type="file" name="photo" accept="image/*" /></div>
+                    <input type="file" asp-for="Photo" name="Photo" class="file-upload-default">
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <button class="btn btn-light"><a asp-action="AboutUs" style="text-decoration:none">Back To List</a></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+

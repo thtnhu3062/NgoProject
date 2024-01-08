@@ -1,0 +1,38 @@
+﻿@model NgoProject.Models.QuestionAbout
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AddQuestion";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>AddQuestion</h1>
+
+<h4>QuestionAbout</h4>
+<hr />
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">About Us</h4>
+            <p class="card-description">
+                Don't leave the background blank
+            </p>
+            <form asp-action="AddQuestion" class="form-sample" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Question" class="control-label"></label>
+                    <input asp-for="Question" class="form-control" required />
+                    <span asp-validation-for="Question" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Answer" class="control-label"></label>
+                    <input asp-for="Answer" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <button class="btn btn-light"><a asp-action="AboutUs" style="text-decoration:none">Back To List</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

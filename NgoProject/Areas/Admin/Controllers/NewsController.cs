@@ -95,10 +95,9 @@ namespace NgoProject.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult NewsEdit(int id)
         {
-            News? k = db.News!.Find(id);
             ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
             ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
-
+            News? k = db.News!.Find(id);
             return View(k);
         }
         [Route("NewsEdit")]
@@ -109,17 +108,17 @@ namespace NgoProject.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                string imageFilename = string.Empty;
+                string imageFilename1 = string.Empty;
                 if (model.NewsImage1 != null && model.NewsImage1.Length > 0)
                 {
-                    imageFilename = model.NewsImage1.FileName;
+                    imageFilename1 = model.NewsImage1.FileName;
                     var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
                     if (!Directory.Exists(imgFolder))
                     {
                         Directory.CreateDirectory(imgFolder);
 
                     }
-                    var imgPath = Path.Combine(imgFolder, imageFilename);
+                    var imgPath = Path.Combine(imgFolder, imageFilename1);
                     var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
                     await model.NewsImage1.CopyToAsync(fs);
                 }
@@ -129,7 +128,7 @@ namespace NgoProject.Areas.Admin.Controllers
                     NewsName = model.NewsName,
                     NewsContent = model.NewsContent,
                     NewsDescription = model.NewsDescription,
-                    NewsImage1 = imageFilename,
+                    NewsImage1 = imageFilename1,
                     CategoryId = model.CategoryId,
                     OurpartnerId = model.OurpartnerId,
 

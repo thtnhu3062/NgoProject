@@ -24,5 +24,6 @@ namespace NgoProject.Controllers
             return View(ltsnews);
         }
 
+
     }
 }

@@ -7,13 +7,11 @@ namespace NgoProject.Models;
 public partial class Aboutu
 {
     [Key]
-    public int AboutusId { get; set; }
-
-    public string? AboutusName { get; set; }
-
-    public string? AboutusImage { get; set; }
-
-    public string? AboutusContent { get; set; }
-
-    public string? AboutusDescription { get; set; }
+    public int Id { get; set; }
+    [Required]
+    public string? Title { get; set; }
+    [Required]
+    public string? Content { get; set; }
+    [Required]
+    public string? Image { get; set; }
 }

@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<NgoProjectContext>();
 // Add services to the container.
-
+builder.Services.AddSession();
 builder.Services.AddControllersWithViews();
 
 
@@ -37,7 +37,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 
