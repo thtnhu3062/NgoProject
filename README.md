@@ -10,4 +10,4 @@
 4. Lê Thành Lợi (Student0000003)
    
 =======================================
-Documentations: https://github.com/thtnhu3062/NgoProject/tree/main/Document
+Documentations: 
