@@ -306,7 +306,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  asp-area="admin" asp-controller="HomeAdmin" asp-action="Donate">
+                        <a class="nav-link"  asp-controller="Donate" asp-action="Donate">
                             <i class="icon-layout menu-icon"></i>
 
                             <span class="menu-title">List Donate</span>
@@ -324,7 +324,7 @@
                         </div>*@
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="User">
+                        <a class="nav-link" asp-area="admin" asp-controller="Account" asp-action="ListUsers">
                             <i class="icon-columns menu-icon"></i>
                             <span class="menu-title">User management</span>
                             <i class="menu-arrow"></i>
@@ -394,7 +394,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                             <i class="icon-head menu-icon"></i>
-                            <span class="menu-title">Our Partner</span>
+                            <span class="menu-title">Partner</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="auth">
@@ -428,7 +428,7 @@
                         <div class="collapse" id="error1">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link " asp-area="admin" asp-controller="HomeAdmin" asp-action="Banner">List Banner  </a></li>
-                             
+                                <li class="nav-item"> <a class="nav-link " asp-area="admin" asp-controller="HomeAdmin" asp-action="BannerAdd">Create Banner  </a></li>
                             </ul>
                         </div>
                     </li>

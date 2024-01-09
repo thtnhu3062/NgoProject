@@ -103,14 +103,14 @@
                     @if(User.Identity?.IsAuthenticated ?? false)
                     {
                         <li class="nav-item">
-                            <p>@User.Identity.Name</p>
-                            <a class="nav-link " asp-controller="Account" asp-action="Logout">LogOut</a>
+@*                            <p>@User.Identity.Name</p>
+                            <a class="nav-link " asp-controller="Account" asp-action="Logout">LogOut</a>*@
                         </li>
                     }
                     else
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Account" asp-action="Login">REGISTER</a>
+                            <a class="nav-link" asp-controller="Account" asp-action="Create">REGISTER</a>
 
                         </li>
                     }
@@ -122,17 +122,33 @@
 @*                    <li class="nav-item">
                         <a class="nav-link click-scroll" href="#section_6">Help Centre</a>
                     </li>*@
+
+                    @if (User.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li class="nav-item">
+
+                            <a class="nav-link " asp-controller="Account" asp-action="Logout"><span>@User.Identity.Name</span><br>LogOut</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+
+                        </li>
+                    }
                     @if (User.Identity?.IsAuthenticated ?? false)
                     {
                         <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn btn" asp-controller="Donate" asp-action="AddDonate">Donate</a>
+                            <a class="nav-link custom-btn custom-border-btn btn" asp-controller="Donate" asp-action="DonateAdd">Donate</a>
                         </li>
-                    }else{
+                    }
+                    else
+                    {
                         <li class="nav-item ms-3">
                             <a class="nav-link custom-btn custom-border-btn btn" asp-controller="Account" asp-action="Login">Donate</a>
                         </li>
                     }
-
                 </ul>
             </div>
         </div>

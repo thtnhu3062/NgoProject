@@ -8,17 +8,18 @@ namespace NgoProject.ViewModel
     public class ViewModelBanner
     {
         [Required]
+     
         public int Id { get; set; }
-        [Required]
+
+        [StringLength(20)]
+
         public string? Title { get; set; }
-        [Required]
+        [StringLength(30)]
+
         public string? Content { get; set; }
-
-        [Required(ErrorMessage = "Image can not be bank")]
+        [Required(ErrorMessage = "Please select a file.")]
+        [DataType(DataType.Upload)]
         public IFormFile? Image { get; set; }
-        public IEnumerable<Banner>? bt { get; set; }
-
-        public IEnumerable<Bannerss>? btss { get; set; }
 
     }
   

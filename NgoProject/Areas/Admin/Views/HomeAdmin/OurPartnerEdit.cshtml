@@ -13,32 +13,32 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="OurpartnerId" />
             <div class="form-group">
-                <label asp-for="OurpartnerName" class="control-label"></label>
+                <label asp-for="OurpartnerName" class="control-label">Partner Name<span style="color:red">*</span></label>
                 <input asp-for="OurpartnerName" class="form-control" />
                 <span asp-validation-for="OurpartnerName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="OurpartnerAddress" class="control-label"></label>
+                <label asp-for="OurpartnerAddress" class="control-label">Partner Address<span style="color:red">*</span></label>
                 <input asp-for="OurpartnerAddress" class="form-control" />
                 <span asp-validation-for="OurpartnerAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="OurpartnerLogo" class="control-label"></label>
+                <label asp-for="OurpartnerLogo" class="control-label">Partner Logo<span style="color:red">*</span></label>
                 <input type="file" asp-for="OurpartnerLogo" class="form-control" value="" />
                 <span asp-validation-for="OurpartnerLogo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="OurpartnerPhone" class="control-label"></label>
+                <label asp-for="OurpartnerPhone" class="control-label">Partner Phone<span style="color:red">*</span></label>
                 <input asp-for="OurpartnerPhone" class="form-control" />
                 <span asp-validation-for="OurpartnerPhone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="OurpartnerAddressWeb" class="control-label"></label>
+                <label asp-for="OurpartnerAddressWeb" class="control-label">Partner Address Web </label>
                 <input asp-for="OurpartnerAddressWeb" class="form-control" />
                 <span asp-validation-for="OurpartnerAddressWeb" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="OurpartnerMail" class="control-label"></label>
+                <label asp-for="OurpartnerMail" class="control-label">Partner Mail<span style="color:red">*</span></label>
                 <input asp-for="OurpartnerMail" class="form-control" />
                 <span asp-validation-for="OurpartnerMail" class="text-danger"></span>
             </div>
@@ -48,4 +48,3 @@
         </form>
     </div>
 </div>
-

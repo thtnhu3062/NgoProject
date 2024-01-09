@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Identity.Client;
 using NgoProject.Models;
 using NgoProject.ViewModel;
 using QuickMailer;

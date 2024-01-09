@@ -20,8 +20,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="NewsImage1" class="control-label"></label>
-                <input asp-for="NewsImage1" class="form-control" />
-                <span asp-validation-for="NewsImage1" class="text-danger"></span>
+                <input asp-for="NewsImage1" type="file"  class="form-control" />
+                <span asp-validation-for="NewsImage1"class="text-danger"></span>
                 <img src="~/user/images/slide/@Model.NewsImage1" style="width:100px ; height:auto ; border-radius: 10%;">
             </div>
             <div class="form-group">

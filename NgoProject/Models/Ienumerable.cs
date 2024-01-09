@@ -11,6 +11,9 @@ namespace NgoProject.Models
         public  IEnumerable<Ourpartner>? Ourpartner { get; set;}
         public IEnumerable<Aboutu>? Abu { get; set; }
         public IEnumerable<QuestionAbout>? questionAbouts { get; set; }
+        public IEnumerable<AppModelUser>? user{ get; set; }
+        public IEnumerable<Donate>? Donates { get; set; }
+
 
     }
 }

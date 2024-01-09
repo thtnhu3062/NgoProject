@@ -7037,6 +7037,10 @@
       "PackagePath": "staticwebassets\\user\\css\\templatemo-kind-heart-charity.css"
     },
     {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\cssour\\cssour.css",
+      "PackagePath": "staticwebassets\\user\\cssour\\cssour.css"
+    },
+    {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\fonts\\Metropolis\\.DS_Store",
       "PackagePath": "staticwebassets\\user\\fonts\\Metropolis\\.DS_Store"
     },
@@ -7217,6 +7221,10 @@
       "PackagePath": "staticwebassets\\user\\images\\slide\\NH.jpg"
     },
     {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\Picture1.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slide\\Picture1.jpg"
+    },
+    {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\Picture10.png",
       "PackagePath": "staticwebassets\\user\\images\\slide\\Picture10.png"
     },
@@ -7231,6 +7239,10 @@
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\Picture2.png",
       "PackagePath": "staticwebassets\\user\\images\\slide\\Picture2.png"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\Picture3.png",
+      "PackagePath": "staticwebassets\\user\\images\\slide\\Picture3.png"
     },
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\Picture4.png",

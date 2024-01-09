@@ -1,6 +1,9 @@
 
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using NgoProject.Models;
+using NgoProject.Mail;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,8 +29,17 @@ builder.Services.Configure<IdentityOptions>(options =>
 
     options.User.RequireUniqueEmail = true;
 });
+builder.Services.AddOptions();
+var mailSettings = builder.Configuration.GetSection("MailSettings");
+builder.Services.Configure<MailSettings>(mailSettings);
+
+builder.Services.AddTransient<IEmailSender, SendMailService>();
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -26,33 +26,32 @@ namespace NgoProject.Areas.Admin.Controllers
         }
 
         [Route("")]
-        //[Route("Login")]
-        //[HttpGet]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Login()
-        //{
-        //    return View();
-        //}
-        //[Route("Login")]
-        //[HttpPost]
-        //public async Task<IActionResult> Login(string name, string pass)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var acc = await db.Admins.SingleOrDefaultAsync(u => u.AdminName == name && u.AdminPassword == pass);
+        [Route("Login")]
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [Route("Login")]
+        [HttpPost]
+        public async Task<IActionResult> Login(string name, string pass)
+        {
+            if (ModelState.IsValid)
+            {
+                var acc = await db.Admins.SingleOrDefaultAsync(u => u.AdminName == name && u.AdminPassword == pass);
 
-        //        if (acc != null)
-        //        {
-        //            HttpContext.Session.SetString("name", name);
-        //            if (acc.AdminPassword == pass)
-        //            {
-        //                return RedirectToAction("Index", "HomeAdmin");
-        //            }
-        //        }
-        //        ViewBag.errors = "Invalid Name or PassWord";
-        //    }
-        //    return View();
-        //}
+                if (acc != null)
+                {
+                    HttpContext.Session.SetString("name", name);
+                    if (acc.AdminPassword == pass)
+                    {
+                        return RedirectToAction("Index", "HomeAdmin");
+                    }
+                }
+                ViewBag.errors = "Invalid Name or PassWord";
+            }
+            return View();
+        }
         [Route("index")]
 
         public IActionResult Index()
@@ -117,17 +116,17 @@ namespace NgoProject.Areas.Admin.Controllers
 
         {
             TempData["Message"] = "";
-            var cats = await db.News.Where(x => x.NewsId == id).ToListAsync();
-            if (cats.Count > 0)
+            var cats =await db.News.Where(x=>x.NewsId==id).ToListAsync();
+            if (cats.Count() > 0)
             {
-                TempData["Message"] = "Không xóa dc";
+                TempData["Message"] = "Can not delete";
                 return RedirectToAction("Category", "HomeAdmin");
 
             }
             var cus = await db.Categories.SingleOrDefaultAsync(x => x.CategoryId == id);
             db.Categories.Remove(cus!);
             db.SaveChanges();
-            TempData["Message"] = "xóa san pham thanh cong";
+            TempData["Message"] = "Delete successfully";
             return RedirectToAction("Category", "HomeAdmin");
         }
 
@@ -268,6 +267,63 @@ namespace NgoProject.Areas.Admin.Controllers
             }
             return View(model);
         }
+        [Route("BannerAdd")]
+        [HttpGet]
+        public IActionResult BannerAdd()
+        {
+            return View();
+        }
+        [Route("BannerAdd")]
+        [HttpPost]
+        public async Task<IActionResult> BannerAdd(ViewModelBanner model)
+        {
+            if (ModelState.IsValid)
+            {
+                string imageFilename = string.Empty;
+                if (model.Image != null && model.Image.Length > 0)
+                {
+                    imageFilename = model.Image.FileName;
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
+                    if (!Directory.Exists(imgFolder))
+                    {
+                        Directory.CreateDirectory(imgFolder);
+
+                    }
+                    var imgPath = Path.Combine(imgFolder, imageFilename);
+                    var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
+                    await model.Image.CopyToAsync(fs);
+                }
+
+                Bannerss p = new Bannerss
+                {
+
+                    TitleTwo = model.Title,
+                    ContentTwo = model.Content,
+                    ImageTwo = imageFilename
+
+
+
+
+                };
+
+
+                db.Bannersses!.Add(p);
+                await db.SaveChangesAsync();
+                return RedirectToAction("Banner", "HomeAdmin");
+            }
+            return View(model);
+
+        }
+        [Route("DeleteBanner")]
+        public async Task<IActionResult> DeleteBanner(int id)
+        {
+            TempData["Message"] = "";
+            var cuse = await db.Bannersses.SingleOrDefaultAsync(x => x.IdTwo == id);
+            db.Bannersses.Remove(cuse!);
+            db.SaveChanges();
+            TempData["Message"] = " Detele Succsessfully";
+            return RedirectToAction("Banner", "HomeAdmin");
+        }
 
 
         [Route("OurPartner")]
@@ -336,14 +392,22 @@ namespace NgoProject.Areas.Admin.Controllers
 
 
         }
-        [Route("DeleteOur")]
-
         public async Task<ActionResult> DeleteOur(int id)
         {
-            var cus = await db.Ourpartners!.SingleOrDefaultAsync(x => x.OurpartnerId == id);
+            TempData["Message"] = "";
 
-            db.Ourpartners.Remove(cus!);
+
+            var cats = await db.News.Where(x => x.NewsId == id).ToListAsync();
+            if (cats.Count() > 0)
+            {
+                TempData["Message"] = "Cannot be deleted when there are Causes";
+                return RedirectToAction("OurPartner", "HomeAdmin");
+
+            }
+            var cuse = await db.Ourpartners.SingleOrDefaultAsync(x => x.OurpartnerId == id);
+            db.Ourpartners.Remove(cuse!);
             db.SaveChanges();
+            TempData["Message"] = "Succsessfully";
             return RedirectToAction("OurPartner", "HomeAdmin");
         }
         [Route("csxc094")]
@@ -399,14 +463,6 @@ namespace NgoProject.Areas.Admin.Controllers
             return View(model);
         }
 
-        [Route("user")]
-        [HttpGet]
-        public async Task<IActionResult> user()
-        {
-
-            return View(await db.Users.ToListAsync());
-
-        }
         [Route("Donate")]
         [HttpGet]
         public async Task<IActionResult> Donate()

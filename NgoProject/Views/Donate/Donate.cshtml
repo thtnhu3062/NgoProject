@@ -1,82 +1,72 @@
-﻿
+﻿@model IEnumerable<NgoProject.Models.Donate>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Donate";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">List Of Donate</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                    User Name
+                            </th>
+                            <th>
+                                    News Name
+                            </th>
+                            <th>
+                                    Date Donate
+                            </th>
+                            <th>
+                                    Money Donate
+                            </th>
+                            <th>
 
-            <section class="donate-section">
-                <div class="section-overlay"></div>
-                <div class="container">
-                    <div class="row">
+                            </th>
+                            <th>
 
-                        <div class="col-lg-6 col-12 mx-auto">
-                            <form class="custom-form donate-form" action="#" method="get" role="form">
-                                <h3 class="mb-4">Make a donation</h3>
+                            </th>
 
-                    <div class="row form-check-group">
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tbody>
+                                @foreach (var item in Model)
+                                {
+                            <tr>
+                                <td>
+                                            @Html.DisplayFor(modelItem => item.User.UserName)
+                                </td>
+                                <td>
+                                            @Html.DisplayFor(modelItem => item.News.NewsName)
+                                </td>
+                                <td>
+                                            @Html.DisplayFor(modelItem => item.DonateDate)
+                                </td>
+                                <td>
+                                            @Html.DisplayFor(modelItem => item.DonateMoney)
+                                </td>
+                                <td>
+                                    <a >Complete</a> 
 
-                                    <div class="col-lg-12 col-12 form-check-group-donation-frequency">
+                                </td>
+                                <td>
+                                    <a>Fail</a>
+                                </td>
 
-                            <select class="col-lg-12 col-12" >
-                                                <option>Chosse News</option>
-                                            </select>
-                                    </div>
-@*
-                                    <div class="col-lg-6 col-6 form-check-group form-check-group-donation-frequency">
-                                        <div class="form-check form-check-radio">
-                                            <input class="form-check-input"  name="DonationFrequency" id="DonationFrequencyMonthly">
-                                            
-                                            <label class="form-check-select" for="DonationFrequencyMonthly">
-                                                Monthly
-                                            </label>
-                                        </div>
-                                    </div>
-*@
-                                    <div class="col-lg-12 col-12">
-                                        <h5 class="mt-2 mb-3">Select an amount</h5>
-                                    </div>
+                            </tr>
+                                }
+                    </tbody>
 
-                                    <div class="col-lg-12 col-12 form-check-group">
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon1">$</span>
-                                            
-                                            <input type="text" class="form-control" placeholder="Custom amount" aria-label="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-12">
-                                        <h5 class="mt-1">Personal Info</h5>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12 mt-2">
-                                        <input type="text" name="donation-name" id="donation-name" class="form-control" placeholder="Jack Doe" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12 mt-2">
-                                        <input type="email" name="donation-email" id="donation-email"  class="form-control" placeholder="Jackdoe@gmail.com" required>
-                                    </div>
-
-                                    <div class="col-lg-12 col-12">
-                                        <h5 class="mt-4 pt-1">Payment</h5>
-                                    </div>
-
-                                    <div class="col-lg-12 col-12 mt-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="DonationPayment" id="flexRadioDefault10">
-                                            <label class="form-check-label" for="flexRadioDefault10">
-                                                <i class="bi-paypal custom-icon ms-1"></i>
-                                                Paypal
-                                            </label>
-                                        </div>
-
-                                        <button type="submit" class="form-control mt-4">Submit Donation</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 

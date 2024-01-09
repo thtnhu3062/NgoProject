@@ -1,0 +1,54 @@
+﻿@model NgoProject.ViewModel.ViewModelBanner
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "BannerAdd";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1>OurPartnerAdd</h1>
+
+
+<hr />
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Partner</h4>
+            <p class="card-description">
+
+            </p>
+
+            <form asp-action="BannerAdd" class="form-sample" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+
+                    <label asp-for="Title" class="control-label">Title</label>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <input asp-for="Title" class="form-control" />
+
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Content" class="control-label">Content</label>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                    <input asp-for="Content" class="form-control" />
+
+                </div>
+                <div class="form-group">
+
+
+                    <label asp-for="Image" class="control-label">Background<span style="color:red">*</span></label>
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                    <input type="file" asp-for="Image" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
