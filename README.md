@@ -5,9 +5,8 @@
 + Group No: : 4
 + List Of Member:
 1. Thân Tâm Như (Student1414246)
-2. Phạm Ngọc Hải (Student)
-3. Trương Võ Bảo Hân (Student0000003)
-4. Lê Thành Lợi (Student0000003)
-   
+2. Phạm Ngọc Hải (Student1414366)
+3. Trương Võ Bảo Hân (Student1414245)
+4. Lê Thành Lợi (Student1387821)
 =======================================
 Documentations: 
