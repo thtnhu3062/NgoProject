@@ -112,7 +112,16 @@ namespace NgoProject.Controllers
             }
             return View(listNews);
         }
+        public async Task<IActionResult> Searchcate(int id)
+        {
 
+            var df = db.News.Where(s => s.CategoryId == id);
+            if (id != 0)
+            {
+                var result = db.News.Select(c => new { id = c.CategoryId });
+            }
+            return View(df);
+        }
         public IActionResult IndexAboutUs()
         {
 

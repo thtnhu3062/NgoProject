@@ -8,18 +8,14 @@ public partial class Feedback
 {
     [Key]
     public int FeedbackId { get; set; }
-
-    public int? UserId { get; set; }
-
-    public string? FeedbackName { get; set; }
-
+    [Required]
+    public string? Name { get; set; }
+    [Required]
+    [DataType(DataType.EmailAddress)]
     public string? FeedbackEmail { get; set; }
-
+    [Required]
     public string? FeedbackPhone { get; set; }
-
-    public string? FeedbackSubject { get; set; }
-
+    [Required]
     public string? FeedbackMessage { get; set; }
 
-    public virtual User? User { get; set; }
 }

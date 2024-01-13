@@ -31,8 +31,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Image">Upload BackGround</label>
-                        <input type="file" asp-for="Image" name="Image" class="file-upload-default">
+                        <label asp-for="Image">Upload BackGround <span style="color: red">*</span></label>
+                        <input type="file" required asp-for="Image" name="Image" class="file-upload-default">
                     <span asp-validation-for="Image" class="text-danger"></span>
 
                     </div>

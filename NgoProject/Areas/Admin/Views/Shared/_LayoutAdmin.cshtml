@@ -107,7 +107,7 @@
                                 <i class="ti-settings text-primary"></i>
                                 Settings
                             </a>
-                            <a class="dropdown-item">
+                            <a asp-area="admin" asp-controller="HomeAdmin" asp-action="Logout">
                                 <i class="ti-power-off text-primary"></i>
                                 Logout
                             </a>
@@ -406,18 +406,18 @@
                             </ul>
                         </div>
                     </li>
-@*                    <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
                             <i class="icon-ban menu-icon"></i>
-                            <span class="menu-title">Feedback Manager</span>
+                            <span class="menu-title">Feedback</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="error">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/admin/pages/samples/error-404.html"> List Feedback </a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="FeedBack" asp-action="IndexFeedBack">Feedback List </a></li>
                             </ul>
                         </div>
-                    </li>*@
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#error1" aria-expanded="false" aria-controls="error1">
@@ -441,10 +441,24 @@
                         <div class="collapse" id="form-elements">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="AboutUs">About Us List</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="Question">About Us Question List</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="AddQuestion">Add Question</a></li>
                             </ul>
                         </div>
                     </li>
+                    @*<li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                            <i class="icon-columns menu-icon"></i>
+                            <span class="menu-title">Feedback</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="form-elements">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Feedback" asp-action="IndexFeedBack">Feedback List</a></li>
+                              
+                            </ul>
+                        </div>
+                    </li>*@
                   @*  <li class="nav-item">
                         <a class="nav-link" href="~/admin/pages/documentation/documentation.html">
                             <i class="icon-paper menu-icon"></i>

@@ -1,13 +1,11 @@
-﻿@model NgoProject.Models.QuestionAbout
+﻿@model NgoProject.ViewModel.ViewModelQuestionAbout
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "AddQuestion";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>AddQuestion</h1>
-
-<h4>QuestionAbout</h4>
+<h1>Add Question</h1>
 <hr />
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
@@ -16,23 +14,23 @@
             <p class="card-description">
                 Don't leave the background blank
             </p>
-            <form asp-action="AddQuestion" class="form-sample" method="post">
+            <form asp-action="AddQuestion" asp-controller="HomeAdmin" class="form-sample" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="Question" class="control-label"></label>
-                    <input asp-for="Question" class="form-control" required />
+                    <label asp-for="Question" class="control-label">Question<span style="color:red">*</span></label>
                     <span asp-validation-for="Question" class="text-danger"></span>
+                    <input type="text" asp-for="Question" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="Answer" class="control-label"></label>
-                    <input asp-for="Answer" class="form-control" required />
+                    <label asp-for="Answer" class="control-label">Answer<span style="color:red">*</span></label>
+                    <span asp-validation-for="Answer" class="text-danger"></span>
+                    <input type="text" asp-for="Answer" class="form-control" />
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />
-                    <button class="btn btn-light"><a asp-action="AboutUs" style="text-decoration:none">Back To List</a></button>
+                    <button class="btn btn-light"><a asp-action="Question" style="text-decoration:none">Back To List</a></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-

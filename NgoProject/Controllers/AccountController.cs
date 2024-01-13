@@ -13,9 +13,11 @@ using NgoProject.Models;
 using NgoProject.ViewModel;
 using NuGet.Common;
 using QuickMailer;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 
 namespace NgoProject.Controllers
@@ -35,7 +37,7 @@ namespace NgoProject.Controllers
         }
 
         public IActionResult Login(string returnUrl)
-    
+
         {
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
@@ -45,7 +47,7 @@ namespace NgoProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(loginVM.UserName,loginVM.UserPassword, false,false);
+                Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(loginVM.UserName, loginVM.UserPassword, false, false);
                 if (result.Succeeded)
                 {
                     return Redirect(loginVM.ReturnUrl ?? "/");
@@ -63,13 +65,13 @@ namespace NgoProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                AppModelUser newUser = new AppModelUser { UserName = user.UserName, Email = user.UserEmail, PhoneNumber = user.UserPhone};
-                IdentityResult result = await _userManager.CreateAsync(newUser,user.UserPassword);
+                AppModelUser newUser = new AppModelUser { UserName = user.UserName, Email = user.UserEmail, PhoneNumber = user.UserPhone };
+                IdentityResult result = await _userManager.CreateAsync(newUser, user.UserPassword);
                 if (result.Succeeded)
                 {
                     return Redirect("/Account/Login");
                 }
-                foreach(IdentityError error in result.Errors)
+                foreach (IdentityError error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }
@@ -78,7 +80,7 @@ namespace NgoProject.Controllers
             return View(user);
         }
 
-        public async Task<IActionResult> Logout(string returnUrl ="/")
+        public async Task<IActionResult> Logout(string returnUrl = "/")
         {
             await _signInManager.SignOutAsync();
             return Redirect(returnUrl);
@@ -88,6 +90,92 @@ namespace NgoProject.Controllers
         {
             var users = _userManager.Users;
             return View(users);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"User with Id = {id} cannot be found";
+                return View("NotFound");
+            }
+
+            // GetClaimsAsync retunrs the list of user Claims
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            // GetRolesAsync returns the list of user Roles
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            var model = new EditUserViewModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName,
+                Phone = user.PhoneNumber,
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditUser(EditUserViewModel model)
+        {
+            var user = await _userManager.FindByIdAsync(model.Id);
+
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"User with Id = {model.Id} cannot be found";
+                return View("NotFound");
+            }
+            else
+            {
+                user.Email = model.Email;
+                user.UserName = model.UserName;
+                user.PhoneNumber = model.Phone;
+
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("ListUsers");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                return View(model);
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"User with Id = {id} cannot be found";
+                return View("NotFound");
+            }
+            else
+            {
+                var result = await _userManager.DeleteAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("ListUsers");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                return View("ListUsers");
+            }
         }
         public async Task<IActionResult> Lock(string id)
         {
@@ -109,7 +197,7 @@ namespace NgoProject.Controllers
             {
                 return NotFound();
             }
-        
+
             var app = await _userManager.FindByIdAsync(id);
             if (app == null)
             {
@@ -121,45 +209,42 @@ namespace NgoProject.Controllers
         }
 
         //forgot password
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
             return View();
         }
-        private async Task SendForgotPasswordEmail(string? email, AppModelUser user)
-        {
-            // Generate the reset password token
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            // Build the password reset link which must include the Callback URL
-            // Build the password reset link
-            var passwordResetLink = Url.Action("ResetPassword", "Account",
-                    new { Email = email, Token = token }, protocol: HttpContext.Request.Scheme);
-            //Send the Confirmation Email to the User Email Id
-            await _emailSender.SendEmailAsync(email, "Reset Your Password", $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(passwordResetLink)}'>clicking here</a>.");
-        }
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-
-        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<IActionResult> ForgotPassword(string? email, ForgotPasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
                 // Find the user by email
                 var user = await _userManager.FindByEmailAsync(model.Email);
+
                 // If the user is found AND Email is confirmed
-                if (user != null && await _userManager.IsEmailConfirmedAsync(user))
+                if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
-                    await SendForgotPasswordEmail(user.Email, user);
-                    // Send the user to Forgot Password Confirmation view
-                    return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                    return RedirectToAction("ForgotPassword", "Account");
                 }
-                // To avoid account enumeration and brute force attacks, don't
-                // reveal that the user does not exist or is not confirmed
-                return RedirectToAction("ForgotPassword", "Account");
+                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                var passwordResetLink = Url.Action("ResetPassword", "Account",
+                           new { Email = email, Token = code }, protocol: HttpContext.Request.Scheme);
+
+                // Gửi email
+               
+                await _emailSender.SendEmailAsync(email, "Reset Your Password", $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(passwordResetLink)}'>clicking here</a>.");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
-            return View(model);
+
+            return View();
         }
+
+
+    
         [AllowAnonymous]
         public ActionResult ForgotPasswordConfirmation()
         {

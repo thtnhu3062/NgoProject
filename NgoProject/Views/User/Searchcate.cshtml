@@ -1,0 +1,44 @@
+﻿@model IEnumerable<NgoProject.Models.News>
+@{
+    ViewData["Title"] = "Searchcate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="contact-section section-padding" id="section_064">
+    <div class="col-lg-10 col-12 text-center mx-auto">
+        <h2 class="">Ngo's Causes</h2>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+
+            @*  @using (Html.BeginForm("SearchNews", "User", FormMethod.Get))
+            {
+            <p class="col-md-7">
+            Category: @Html.DropDownList("categoryID","All") <input type="submit" value="Search" />
+            </p>
+            } *@
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+                    <div class="featured-block d-flex custom-text-block  align-items-center" style="text-align:center;">
+
+                        <a href="@Url.Action("DetailsNews","User", new {id = item.CategoryId})" class="d-block">
+
+                            <img src="~/user/images/slide/@item.NewsImage1" style=" width:300px ; height:auto ; border-radius: 10%;" class=" img-fluid" alt="...">
+                        </a>
+                        <div>
+                            <h6>@item.NewsName</h6>
+                            <h7>@item.NewsContent</h7>
+                        </div>
+
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+</section>

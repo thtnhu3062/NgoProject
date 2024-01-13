@@ -1,4 +1,5 @@
-﻿@model NgoProject.Models.Ienumerable
+﻿@model IEnumerable<NgoProject.Models.Aboutu>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "AboutUs";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
@@ -8,9 +9,9 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">About Us</h4>
-            <p class="card-description">
+           @* <p class="card-description">
                 <code>About Us</code>
-            </p>
+            </p>*@
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -23,11 +24,8 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        @foreach (var item in Model.Abu!)
+                        @foreach (var item in Model)
                         {
-
-
                             <tr>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Id)
@@ -42,53 +40,48 @@
                                 </td>
 
                                 <td>
-                                    <a style="text-decoration:none" href="@Url.Action("EditAbout","HomeAdmin", new {id = item.Id})">Edit |</a>
-                                    <a style="text-decoration:none" href="@Url.Action("DeleteAbout","HomeAdmin", new {id = item.Id})">Delete</a>
+                                    <a style="text-decoration:none" class="btn btn-primary" href="@Url.Action("EditAbout","HomeAdmin", new {id = item.Id})">Edit</a>
+                                    <a style="text-decoration:none" class="btn btn-danger" href="@Url.Action("DeleteAbout","HomeAdmin", new {id = item.Id})">Delete</a>
                                 </td>
                             </tr>
                         }
                     </tbody>
                 </table>
-            </div>
-
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Title</th>
-                            <th>Content</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach (var item in Model.questionAbouts!)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Question)
-                                </td>
-                                <td style="white-space:pre-line">
-                                    @Html.DisplayFor(modelItem => item.Answer)
-                                <td>
-                                    <a style="text-decoration:none" href="@Url.Action("EditQuestion","HomeAdmin", new {id = item.Id})">Edit |</a>
-                                    <a style="text-decoration:none" href="@Url.Action("DeleteQuestion","HomeAdmin", new {id = item.Id})">Delete</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-
             </div>
         </div>
     </div>
+</div>
 
+@* <div class="table-responsive">
+            <table class="table table-striped">
+            <thead>
+            <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
 
+            @foreach (var item in Model.questionAbouts!)
+            {
+            <tr>
+            <td>
+            @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td style="white-space:pre-line">
+            @Html.DisplayFor(modelItem => item.Answer)
+            <td>
+                <a style="text-decoration:none" href="@Url.Action("EditQuestion","HomeAdmin", new {id = item.Id})">Edit |</a>
+            <a style="text-decoration:none" href="@Url.Action("DeleteQuestion","HomeAdmin", new {id = item.Id})">Delete</a>
+            </td>
+            </tr>
+            }
+            </tbody>
+            </table>
 
-
-
-
+            </div>*@

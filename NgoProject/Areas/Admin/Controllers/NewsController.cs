@@ -98,10 +98,15 @@ namespace NgoProject.Areas.Admin.Controllers
             ViewBag.CategoryId = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
             ViewBag.OurpartnerId = new SelectList(db.Ourpartners.ToList(), "OurpartnerId", "OurpartnerName");
             News? k = db.News!.Find(id);
+
+      
+
+
             return View(k);
         }
         [Route("NewsEdit")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> NewsEdit(int id, ViewModelNews model)
         {
             News? k = db.News!.Find(id);
@@ -125,6 +130,7 @@ namespace NgoProject.Areas.Admin.Controllers
 
                 News p = new News
                 {
+                    NewsId = model.NewsId,
                     NewsName = model.NewsName,
                     NewsContent = model.NewsContent,
                     NewsDescription = model.NewsDescription,

@@ -5,80 +5,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     }
 
-    <section class="contact-section section-padding" id="section_064">
 
-        <div class="container">
-            <div class="row">
 
-                <div class="col-lg-10 col-12 text-center mx-auto">
-                    <h2 class="">Ngo's Partner'</h2><br />
-                    <h6 class=""> Typical fundraising organizations</h6>
-                </div>
-                @using (Html.BeginForm("SearchNews", "User", FormMethod.Get))
+<section class="about-section section-padding">
+    <br /> <br />
+    <div class="col-lg-10 col-12 text-center mx-auto">
+        <h2 class="">Ngo's Causes</h2>
+    </div>
+    <br /> <br />
+    <div class="container">
+        <div class="row">
+            @using (Html.BeginForm("SearchNews", "User", FormMethod.Get))
             {
-                <p>
-                    Category: @Html.DropDownList("categoryID", "All") <input type="submit" value="Search" />
+                <p class="col-md-7">
+                    @Html.TextBox("SearchString") <input class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="submit" value="Search" />
+
                 </p>
-
             }
-
-                @foreach (var item in Model)
+            @foreach (var item in Model)
             {
-                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
-                    <div class="featured-block d-flex justify-content-center align-items-center">
-
-                        <a href="@Url.Action("DetailsNews","User", new {id = item.NewsId})" class="d-block">
-                            <h6>@item.NewsName</h6>
-
-                            <img src="~/user/images/slide/@item.NewsImage1" style=" width:300px ; height:auto ; border-radius: 10%;" class=" img-fluid" alt="...">
-
-
-                        </a>
-                    </div>
-                </div>
-
-            }
-
-            </div>
-        </div>
-
-    </section>
-
-    <section class="about-section section-padding">
-        <div class="container">
-            <div class="row">
-
                 <div class="col-lg-6 col-md-5 col-12">
-                    <img src="~/user/images/hinhnhom.jpg" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
+                    <a href="@Url.Action("DetailsNews","User", new {id = item.NewsId})">
+                        <img src="~/user/images/slide/@item.NewsImage1" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="" style="width:500px; height:400px;">
+                    </a>
+
                 </div>
+                <br />
 
                 <div class="col-lg-5 col-md-7 col-12">
                     <div class="custom-text-block">
-                        <h2 class="mb-0">NHLH $4</h2>
+                        <h2 class="mb-0"><a href="@Url.Action("DetailsNews","User", new {id = item.NewsId})" class="d-block">@item.NewsName</a> </h2>
 
-                        <p class="text-muted mb-lg-4 mb-md-4">Founding Group</p>
+                        <p class="text-muted mb-lg-4 mb-md-4"><a href="@Url.Action("DetailsNews","User", new {id = item.NewsId})" class="d-block">@item.NewsContent</a></p>
 
-                        <p>needs to be developed which will consist of various NGO's.</p>
+                        <p><a href="@Url.Action("DetailsNews","User", new {id = item.NewsId})" class="d-block">@item.NewsDescription</a></p>
 
-                        <p>Student FPT Aptech.</p>
-
-                        <ul class="social-icon mt-4">
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-twitter"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-facebook"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-instagram"></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-
-            </div>
+                
+            }
+            <br /> <br />    <br /> <br />
+            
         </div>
-    </section>
+
+
+    </div>
+</section>
 

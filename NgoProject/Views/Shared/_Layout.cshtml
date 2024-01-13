@@ -1,4 +1,6 @@
-﻿
+﻿@inject SignInManager<AppModelUser> signInManager
+@inject UserManager<AppModelUser> userManager
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -76,7 +78,7 @@
                 <img src="~/user/images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
                 <span>
                     NGO's
-                    <small>Non-Governmental Organization</small>
+                    <small>Non-Governmental</small>
                 </span>
             </a>
 
@@ -119,15 +121,19 @@
                         <a class="nav-link" asp-controller="User" asp-action="IndexAboutUs">About Us</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="FeedBack" asp-action="AddFeedBack">Feedback</a>
+                    </li>
 @*                    <li class="nav-item">
                         <a class="nav-link click-scroll" href="#section_6">Help Centre</a>
                     </li>*@
 
                     @if (User.Identity?.IsAuthenticated ?? false)
                     {
+                     
                         <li class="nav-item">
 
-                            <a class="nav-link " asp-controller="Account" asp-action="Logout"><span>@User.Identity.Name</span><br>LogOut</a>
+                            <a class="nav-link " asp-controller="Account" asp-action="LogOut"><span>@User.Identity.Name </span><br>LogOut</a>
                         </li>
                     }
                     else
@@ -238,7 +244,6 @@
             </div>
         </div>
     </footer>
-
     <!-- JAVASCRIPT FILES -->
     <script src="~/user/js/jquery.min.js"></script>
     <script src="~/user/js/bootstrap.min.js"></script>
@@ -246,6 +251,5 @@
     <script src="~/user/js/click-scroll.js"></script>
     <script src="~/user/js/counter.js"></script>
     <script src="~/user/js/custom.js"></script>
-
 </body>
 </html>

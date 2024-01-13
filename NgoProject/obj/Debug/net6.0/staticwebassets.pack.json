@@ -765,6 +765,10 @@
       "PackagePath": "staticwebassets\\admin\\images\\logo-white.svg"
     },
     {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\admin\\images\\logo.png",
+      "PackagePath": "staticwebassets\\admin\\images\\logo.png"
+    },
+    {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\admin\\images\\logo.svg",
       "PackagePath": "staticwebassets\\admin\\images\\logo.svg"
     },
@@ -2131,6 +2135,14 @@
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\admin\\scss\\vertical-layout-light\\style.scss",
       "PackagePath": "staticwebassets\\admin\\scss\\vertical-layout-light\\style.scss"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\admin\\uploads\\Picture10.png",
+      "PackagePath": "staticwebassets\\admin\\uploads\\Picture10.png"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\admin\\uploads\\donation.jpg",
+      "PackagePath": "staticwebassets\\admin\\uploads\\donation.jpg"
     },
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\admin\\vendors\\ace-builds\\src-min\\ace.js",
@@ -7093,6 +7105,10 @@
       "PackagePath": "staticwebassets\\user\\images\\Donatee.jpg"
     },
     {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\addressweb.jpg.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\addressweb.jpg.jpg"
+    },
+    {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\avatar\\BH.jpg",
       "PackagePath": "staticwebassets\\user\\images\\avatar\\BH.jpg"
     },
@@ -7137,6 +7153,10 @@
       "PackagePath": "staticwebassets\\user\\images\\different-people-doing-volunteer-work.jpg"
     },
     {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\gmail.jpg.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\gmail.jpg.jpg"
+    },
+    {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\group.jpg",
       "PackagePath": "staticwebassets\\user\\images\\group.jpg"
     },
@@ -7167,6 +7187,10 @@
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\logoo.pdf",
       "PackagePath": "staticwebassets\\user\\images\\logoo.pdf"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\msm.jpg.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\msm.jpg.jpg"
     },
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\news\\africa-humanitarian-aid-doctor.jpg",
@@ -7203,6 +7227,10 @@
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\pf4.jpg",
       "PackagePath": "staticwebassets\\user\\images\\pf4.jpg"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\359231863-10001810046503459-54-1392-1456-1690127051.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slide\\359231863-10001810046503459-54-1392-1456-1690127051.jpg"
     },
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\BH.jpg",
@@ -7341,6 +7369,10 @@
       "PackagePath": "staticwebassets\\user\\images\\slide\\chuyenhinh3.jpg"
     },
     {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\cnsg-1691147093-4627-1691229870.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slide\\cnsg-1691147093-4627-1691229870.jpg"
+    },
+    {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\user.png",
       "PackagePath": "staticwebassets\\user\\images\\slide\\user.png"
     },
@@ -7355,6 +7387,34 @@
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slide\\z5047415052398_50685bb774a1a4d46d7d856ed976563b.jpg",
       "PackagePath": "staticwebassets\\user\\images\\slide\\z5047415052398_50685bb774a1a4d46d7d856ed976563b.jpg"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slideapeecwnsuz\\z5047414562368_4c5cd2b479c9428f7e581834139311be.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slideapeecwnsuz\\z5047414562368_4c5cd2b479c9428f7e581834139311be.jpg"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slidecqearctrxq\\Picture1.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slidecqearctrxq\\Picture1.jpg"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slidehzbmyoksvg\\Picture9.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slidehzbmyoksvg\\Picture9.jpg"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slidekhzjpjiwas\\Picture4.png",
+      "PackagePath": "staticwebassets\\user\\images\\slidekhzjpjiwas\\Picture4.png"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slidekxpxyoybmt\\Picture7.png",
+      "PackagePath": "staticwebassets\\user\\images\\slidekxpxyoybmt\\Picture7.png"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slidervjxjbqsvm\\z5047415052398_50685bb774a1a4d46d7d856ed976563b.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slidervjxjbqsvm\\z5047415052398_50685bb774a1a4d46d7d856ed976563b.jpg"
+    },
+    {
+      "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\slideukemfcqwlg\\z5047415052398_50685bb774a1a4d46d7d856ed976563b.jpg",
+      "PackagePath": "staticwebassets\\user\\images\\slideukemfcqwlg\\z5047415052398_50685bb774a1a4d46d7d856ed976563b.jpg"
     },
     {
       "Id": "F:\\Project3\\NgoProject\\NgoProject\\wwwroot\\user\\images\\volun.jpg",

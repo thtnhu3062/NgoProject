@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section class="volunteer-section section-padding" id="section_4">
+<section class="volunteer-section section-padding" id="section_4" style="background-color:aliceblue">
     <div class="container">
         <div class="row">
 
@@ -24,10 +24,10 @@
 
                     <button type="submit" class="form-control">Login</button>
 
-                    <i class="bi-chat-square-heart-fill ms-auto">You no have Account?<a asp-controller="Account" asp-action="Create">Create</a></i>
-                    <div>
+                    <i class="bi-chat-square-heart-fill ms-auto">You no have Account?<a asp-controller="Account" asp-action="Create"><span style="font-size:14px">Create</span></a></i>
+@*                    <div>
                         <a asp-controller="Account" asp-action="ForgotPassword">Forgot Password?</a>
-                    </div>
+                    </div>*@
                 </form>
             </div>
 

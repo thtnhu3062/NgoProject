@@ -64,8 +64,8 @@
                                             @Html.DisplayFor(modelItem => item.Ourpartner!.OurpartnerName)
                                 </td>
                                 <td>
-                                    <a href="@Url.Action("NewsEdit","News", new {id = item.NewsId})">Edit</a> |
-                                    <a href="@Url.Action("DeleteNews","News", new {id = item.NewsId})">Delete</a>
+                                    <a class="btn btn-dark btn-icon-text" href="@Url.Action("NewsEdit","News", new {id = item.NewsId})">Edit</a> |
+                                    <a class="btn btn-danger btn-icon-text" href="@Url.Action("DeleteNews","News", new {id = item.NewsId})">Delete</a>
                                 </td>
 
                             </tr>

@@ -1,0 +1,70 @@
+﻿@model NgoProject.ViewModel.ViewModelFeedBack
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "FeedBack";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="contact-section section-padding" id="section_6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <form class="custom-form volunteer-form mb-5 mb-lg-0" asp-controller="FeedBack" asp-action="AddFeedBack" method="post">
+                    <h3 class="mb-4">Feedback</h3>
+                    <div class="col-lg-12 col-12">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                        <input asp-for="Name" class="form-control" placeholder="Enter Your Name...">
+                    </div>
+                    <div class="col-lg-12 col-12">
+                        <span asp-validation-for="FeedbackPhone" class="text-danger"></span>
+                        <input asp-for="FeedbackPhone" class="form-control" placeholder="Enter Your Phone Number...">
+                    </div>
+                    <div class="col-lg-12 col-12">
+                        <span asp-validation-for="FeedbackEmail" class="text-danger"></span>
+                        <input type="text" asp-for="FeedbackEmail" class="form-control" placeholder="Enter Your Email...">
+                    </div>
+                    <div class="col-lg-12 col-12">
+                        <span asp-validation-for="FeedbackMessage" class="text-danger"></span>
+                        <textarea asp-for="FeedbackMessage" class="form-control" placeholder="What we can help you?"></textarea>
+                    </div>
+                    <button type="submit" onclick="return confirm('Are you sure to send feedback ?') " class="form-control">Send Feedback</button>
+                </form>
+            </div>
+
+            <div class="col-lg-6 col-lg-6">
+                <div class="contact-image-wrap d-flex flex-wrap">
+                    <img src="~/user/images/logo.png" class="img-fluid avatar-image" alt="">
+
+                    <div class="d-flex flex-column justify-content-center ms-3">
+                        <p class="mb-0">Tam Nhu </p>
+                        <p class="mb-0"><strong>Office Manager</strong></p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h5 class="mb-3">Contact Infomation</h5>
+
+                    <p class="d-flex mb-2">
+                        <i class="bi-geo-alt me-2"></i>
+                        Cach Mang Thang 8, 11 Ward , 3 District
+                    </p>
+
+                    <p class="d-flex mb-2">
+                        <i class="bi-telephone me-2"></i>
+
+                        <a href="tel: 120-240-9600">
+                            120-240-9600
+                        </a>
+                    </p>
+                    <p class="d-flex">
+                        <i class="bi-envelope me-2"></i>
+                        <a href="mailto:info@company.com">
+                            abc@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

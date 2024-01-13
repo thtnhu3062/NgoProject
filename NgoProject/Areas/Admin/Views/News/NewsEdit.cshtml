@@ -9,38 +9,38 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-7">
         <form asp-action="NewsEdit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="NewsId" />
             <div class="form-group">
-                <label asp-for="NewsName" class="control-label"></label>
+                <label asp-for="NewsName" class="control-label">Name</label>
                 <input asp-for="NewsName" class="form-control" />
                 <span asp-validation-for="NewsName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NewsImage1" class="control-label"></label>
-                <input asp-for="NewsImage1" type="file"  class="form-control" />
-                <span asp-validation-for="NewsImage1"class="text-danger"></span>
+                <label asp-for="NewsImage1" class="control-label">Image<span style="color:red">*</span></label>
+                <input asp-for="NewsImage1" required type="file" class="form-control" />
+                <span asp-validation-for="NewsImage1" class="text-danger"></span>
                 <img src="~/user/images/slide/@Model.NewsImage1" style="width:100px ; height:auto ; border-radius: 10%;">
             </div>
             <div class="form-group">
-                <label asp-for="NewsContent" class="control-label"></label>
+                <label asp-for="NewsContent" class="control-label">Content</label>
                 <input asp-for="NewsContent" class="form-control" />
                 <span asp-validation-for="NewsContent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NewsDescription" class="control-label"></label>
+                <label asp-for="NewsDescription" class="control-label">Description</label>
                 <input asp-for="NewsDescription" class="form-control" />
                 <span asp-validation-for="NewsDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+                <label asp-for="CategoryId" class="control-label">Category</label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="OurpartnerId" class="control-label"></label>
-                <select asp-for="OurpartnerId" class ="form-control" asp-items="ViewBag.OurpartnerId"></select>
+                <label asp-for="OurpartnerId" class="control-label">Ourpartner</label>
+                <select asp-for="OurpartnerId" class="form-control" asp-items="ViewBag.OurpartnerId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -48,4 +48,3 @@
         </form>
     </div>
 </div>
-

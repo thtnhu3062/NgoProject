@@ -20,11 +20,9 @@ public partial class User
 
     public string? UserAddress { get; set; }
 
-    public string? UserAvatar { get; set; }
     [Required]
     public string? UserPhone { get; set; }
 
     public virtual ICollection<Donate> Donates { get; set; } = new List<Donate>();
 
-    public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
 }

@@ -5,22 +5,32 @@
     ViewData["Title"] = "EditCategory";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<style>
+    .field-validation-error {
+        color: red
+    }
 
+    .validation-summary-errors {
+        color: red
+    }
+</style>
 <h4>Edit Category</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-7">
         <form method="post" asp-action="EditCategory">
+            @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CategoryId" />
             <div class="form-group">
-                <label asp-for="CategoryName" class="control-label"></label>
+                <label asp-for="CategoryName" class="control-label"><span style="color:red">*</span></label>
                 <input asp-for="CategoryName" class="form-control" />
                 <span asp-validation-for="CategoryName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryDescription" class="control-label"></label>
-                <input asp-for="CategoryDescription" class="form-control" />
+                <label asp-for="CategoryDescription" class="control-label"><span style="color:red">*</span></label>
+                <textarea asp-for="CategoryDescription" class="form-control"></textarea>
                 <span asp-validation-for="CategoryDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -29,5 +39,3 @@
         </form>
     </div>
 </div>
-
-

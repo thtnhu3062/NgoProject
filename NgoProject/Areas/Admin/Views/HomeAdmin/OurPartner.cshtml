@@ -1,4 +1,6 @@
-﻿@model IEnumerable<NgoProject.Models.Ourpartner>
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model IEnumerable<NgoProject.Models.Ourpartner>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "OurPartner";
@@ -16,7 +18,7 @@
                         
                             <th>  Name</th>
                             <th>  Logo</th>
-                            <th> About</th>
+                            <th> About &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;</th>
 
                           
                             <th> Phone</th>
@@ -57,11 +59,10 @@
                                 </td>
                                 <td>
                              @*        <a asp-action="BannerEdit" asp-route-id="@item.OurpartnerId">Edit</a> *@
-                                    <a href="@Url.Action("DeleteOur","HomeAdmin", new {id = item.OurpartnerId})">Delete</a>
+                                    <a class="btn btn-danger btn-icon-text" href="@Url.Action("DeleteOur","HomeAdmin", new {id = item.OurpartnerId})">Delete</a>
 
 
-                                    <a href="@Url.Action("OurPartnerEdit","HomeAdmin", new {id = item.OurpartnerId})">Edit</a>
-
+                                    <a class="btn btn-dark btn-icon-text" href="@Url.Action("OurPartnerEdit","HomeAdmin", new {id = item.OurpartnerId})">Edit</a>
                                 </td>
 
 
@@ -74,5 +75,11 @@
                 </table>
             </div>
         </div>
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Category", new { page = page }),
+        new X.PagedList.Web.Common.PagedListRenderOptions
+        {
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" }
+        })
     </div>
 </div>

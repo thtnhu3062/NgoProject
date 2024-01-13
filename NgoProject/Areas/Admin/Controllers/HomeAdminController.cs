@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Microsoft.Extensions.Hosting;
 using NgoProject.Models;
+using NgoProject.Models.Authentication;
 using NgoProject.ViewModel;
 using System.Net;
-
+using System.Text;
+using X.PagedList;
 
 namespace NgoProject.Areas.Admin.Controllers
 {
@@ -52,18 +55,33 @@ namespace NgoProject.Areas.Admin.Controllers
             }
             return View();
         }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("name");
+            HttpContext.Session.Clear(); 
+            return RedirectToAction("Logout", "HomeAdmin");
+        }
+        [Authentication]
         [Route("index")]
 
         public IActionResult Index()
         {
             return View();
         }
+      
         [Route("Category")]
-        public IActionResult Category()
+        public IActionResult Category(string searchString, int? page)
         {
-            var lst = db.Categories.ToList();
-            return View(lst);
+            var md = db.Categories.ToPagedList(page ?? 1, 5);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+
+                md = db.Categories.ToPagedList(page ?? 1, 5);
+            }
+
+            return View(md);
         }
+
         [Route("AddCategory")]
         [HttpGet]
         public IActionResult AddCategory()
@@ -78,16 +96,22 @@ namespace NgoProject.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult AddCategory(Category sp)
         {
+            string message = "";
             if (ModelState.IsValid)
             {
+                message = "category" + sp.CategoryName + "created successfully";
+                message = "category" + sp.CategoryDescription + "created successfully";
                 db.Categories.Add(sp);
                 db.SaveChanges();
                 return RedirectToAction("Category");
             }
-            return View(sp);
-
+            else
+            {
+                return View(sp);
+            }
+            return Content(message);
         }
-
+     
         [Route("EditCategory")]
         [HttpGet]
         public IActionResult EditCategory(int id)
@@ -100,16 +124,23 @@ namespace NgoProject.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult EditCategory(Category cate)
         {
+            string message = "";
             if (ModelState.IsValid)
             {
+                message = "category" + cate.CategoryName + "update successfully";
+                message = "category" + cate.CategoryDescription + "update successfully";
                 db.Entry(cate).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Category", "HomeAdmin");
             }
-            return View(cate);
+            else
+            {
+                return View(cate);
+            }
+            return Content(message);
 
         }
-
+       
         [Route("DeleteCategory")]
         [HttpGet]
         public async Task<ActionResult> DeleteCategory(int id)
@@ -129,7 +160,7 @@ namespace NgoProject.Areas.Admin.Controllers
             TempData["Message"] = "Delete successfully";
             return RedirectToAction("Category", "HomeAdmin");
         }
-
+      
         [Route("Banner")]
         [HttpGet]
         public IActionResult Banner()
@@ -142,7 +173,7 @@ namespace NgoProject.Areas.Admin.Controllers
             });
 
         }
-     
+
 
         [Route("BannerEdit")]
         [HttpPost]
@@ -153,18 +184,30 @@ namespace NgoProject.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
+                int length = 10;
+                Random random = new Random();
+                char[] chars = "qwertyuiopasdfghjklzxcvbnm".ToCharArray();
+
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < length; i++)
+                {
+                    int index = random.Next(chars.Length);
+                    sb.Append(chars[index]);
+                }
                 string imageFilename = string.Empty;
                 if (model.Image != null && model.Image.Length > 0)
                 {
+                    string randomString = sb.ToString();
                     imageFilename = model.Image.FileName;
-                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide" + randomString);
                     if (!Directory.Exists(imgFolder))
                     {
                         Directory.CreateDirectory(imgFolder);
 
                     }
                     var imgPath = Path.Combine(imgFolder, imageFilename);
-                    var fs = new FileStream(imgPath, FileMode.Create);
+                    var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
                     await model.Image.CopyToAsync(fs);
                 }
 
@@ -185,7 +228,7 @@ namespace NgoProject.Areas.Admin.Controllers
             }
             return View(model);
         }
-
+     
         [Route("BannerEdit")]
         [HttpGet]
         public IActionResult BannerEdit(int id)
@@ -205,11 +248,8 @@ namespace NgoProject.Areas.Admin.Controllers
             return View(Vi);
         }
 
-
-
-
-
         [Route("csxc09")]
+        [HttpGet]
         [HttpGet]
         public ActionResult BannerEdit2(int id)
         {
@@ -235,19 +275,33 @@ namespace NgoProject.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
+                int length = 10;
+                Random random = new Random();
+                char[] chars = "qwertyuiopasdfghjklzxcvbnm".ToCharArray();
+
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < length; i++)
+                {
+                    int index = random.Next(chars.Length);
+                    sb.Append(chars[index]);
+                }
                 string imageFilename = string.Empty;
                 if (model.Image != null && model.Image.Length > 0)
                 {
+                    string randomString = sb.ToString();
                     imageFilename = model.Image.FileName;
-                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide");
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide" + randomString);
                     if (!Directory.Exists(imgFolder))
                     {
                         Directory.CreateDirectory(imgFolder);
 
                     }
                     var imgPath = Path.Combine(imgFolder, imageFilename);
+
                     var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
                     await model.Image.CopyToAsync(fs);
+
                 }
 
                 Bannerss p = new Bannerss
@@ -260,13 +314,14 @@ namespace NgoProject.Areas.Admin.Controllers
 
 
                 // db.Set<Banner>().Update(p);
-              
+
                 db.Attach(p).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Banner", "HomeAdmin");
             }
             return View(model);
         }
+        
         [Route("BannerAdd")]
         [HttpGet]
         public IActionResult BannerAdd()
@@ -314,7 +369,9 @@ namespace NgoProject.Areas.Admin.Controllers
             return View(model);
 
         }
+       
         [Route("DeleteBanner")]
+        [HttpGet]
         public async Task<IActionResult> DeleteBanner(int id)
         {
             TempData["Message"] = "";
@@ -325,21 +382,26 @@ namespace NgoProject.Areas.Admin.Controllers
             return RedirectToAction("Banner", "HomeAdmin");
         }
 
-
         [Route("OurPartner")]
         [HttpGet]
-        public async Task<IActionResult> OurPartner()
+        public async Task<IActionResult> OurPartner(string searchString , int? page)
         {
             //return View(new Models.Ienumerable
             //{
 
             //    Ourpartner = db.Ourpartners.ToList(),
             //});
-            return View(await db.Ourpartners.ToListAsync());
+            var md = db.Ourpartners.ToPagedList(page ?? 1, 5);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+
+                md = db.Ourpartners.ToPagedList(page ?? 1, 5);
+            }
+            return View(md);
 
 
         }
-
+      
         [Route("OurPartnerAdd")]
         [HttpGet]
         public IActionResult OurPartnerAdd()
@@ -392,6 +454,8 @@ namespace NgoProject.Areas.Admin.Controllers
 
 
         }
+        [Route("DeleteOur")]
+   
         public async Task<ActionResult> DeleteOur(int id)
         {
             TempData["Message"] = "";
@@ -410,36 +474,57 @@ namespace NgoProject.Areas.Admin.Controllers
             TempData["Message"] = "Succsessfully";
             return RedirectToAction("OurPartner", "HomeAdmin");
         }
+      
         [Route("csxc094")]
         [HttpGet]
         public ActionResult OurPartnerEdit(int id)
         {
             Ourpartner? k = db.Ourpartners!.Find(id);
-
-            return View(k);
+            var view = new ViewModelOurPartner
+            {
+   
+              OurpartnerId = k.OurpartnerId,
+                    OurpartnerName = k.OurpartnerName,
+                    OurpartnerPhone = k.OurpartnerPhone,
+                    OurpartnerAddressWeb = k.OurpartnerAddressWeb,
+                    OurpartnerMail = k.OurpartnerMail,
+                    OurpartnerAddress = k.OurpartnerAddress,
+            };
+            return View(view);
+         
         }
 
         [Route("csxc094")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> OurPartnerEdit(int id ,  ViewModelOurPartner model)
+        public async Task<IActionResult> OurPartnerEdit(  ViewModelOurPartner model)
         {
-            Ourpartner? k = db.Ourpartners!.Find(id);
-
             if (ModelState.IsValid)
             {
+                int length = 10;
+                Random random = new Random();
+                char[] chars = "qwertyuiopasdfghjklzxcvbnm".ToCharArray();
+
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < length; i++)
+                {
+                    int index = random.Next(chars.Length);
+                    sb.Append(chars[index]);
+                }
                 string imageFilename = string.Empty;
                 if (model.OurpartnerLogo != null && model.OurpartnerLogo.Length > 0)
                 {
+                    string randomString = sb.ToString();
                     imageFilename = model.OurpartnerLogo.FileName;
-                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide" );
+                    var imgFolder = Path.Combine(_hostEnvironment.WebRootPath, "user/images/slide" + randomString);
                     if (!Directory.Exists(imgFolder))
                     {
                         Directory.CreateDirectory(imgFolder);
 
                     }
                     var imgPath = Path.Combine(imgFolder, imageFilename);
-                    var fs = new FileStream(imgPath, FileMode.OpenOrCreate);
+                    var fs = new FileStream(imgPath, FileMode.Create);
                     await model.OurpartnerLogo.CopyToAsync(fs);
                 }
 
@@ -463,31 +548,29 @@ namespace NgoProject.Areas.Admin.Controllers
             return View(model);
         }
 
-        [Route("Donate")]
-        [HttpGet]
-        public async Task<IActionResult> Donate()
-        {
+        
 
-            return View(await db.Donates.ToListAsync());
-
-        }
-
-
-
+      
         [Route("AboutUs")]
         [HttpGet]
         public IActionResult AboutUs()
         {
-            return View(new Models.Ienumerable
-            {
-                Abu = db.Aboutus.ToList(),
-                questionAbouts = db.qa.ToList()
-            });
+            var ab = db.Aboutus.ToList();
+            return View(ab);
 
         }
 
+       
+        [Route("Question")]
+        [HttpGet]
+        public IActionResult Question()
+        {
+            var q = db.qa.ToList();
+            return View(q);
 
+        }
 
+    
         [Route("AddQuestion")]
         [HttpGet]
         public IActionResult AddQuestion()
@@ -500,18 +583,25 @@ namespace NgoProject.Areas.Admin.Controllers
         [Route("AddQuestion")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddQuestion(QuestionAbout qa)
+        public IActionResult AddQuestion(ViewModelQuestionAbout model)
         {
             if (ModelState.IsValid)
             {
+
+                QuestionAbout qa = new QuestionAbout
+                {
+                    Question = model.Question,
+                    Answer = model.Answer,
+                };
+
                 db.qa.Add(qa);
                 db.SaveChanges();
-                return RedirectToAction("AboutUs");
+                return RedirectToAction("Question","HomeAdmin");
             }
-            return View(qa);
+            return View(model);
 
         }
-
+       
         [Route("EditQuestion")]
         [HttpPost]
         public async Task<IActionResult> EditQuestion(ViewModelQuestionAbout model)
@@ -529,11 +619,11 @@ namespace NgoProject.Areas.Admin.Controllers
 
                 db.Attach(ab).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("AboutUs", "HomeAdmin");
+                return RedirectToAction("Question", "HomeAdmin");
             }
             return View(model);
         }
-
+        
         [Route("EditQuestion")]
         [HttpGet]
         public async Task<IActionResult> EditQuestion(int id)
@@ -548,7 +638,7 @@ namespace NgoProject.Areas.Admin.Controllers
             };
             return View(view);
         }
-
+       
         [Route("DeleteQuestion")]
 
         public async Task<ActionResult> DeleteQuestion(int id)
@@ -556,7 +646,7 @@ namespace NgoProject.Areas.Admin.Controllers
             var cus = await db.qa!.SingleOrDefaultAsync(x => x.Id == id);
             db.qa.Remove(cus!);
             db.SaveChanges();
-            return RedirectToAction("AboutUs", "HomeAdmin");
+            return RedirectToAction("Question", "HomeAdmin");
         }
 
 
@@ -597,7 +687,7 @@ namespace NgoProject.Areas.Admin.Controllers
             }
             return View(model);
         }
-
+        [Authentication]
         [Route("EditAbout")]
         [HttpGet]
         public async Task<IActionResult> EditAbout(int id)
@@ -612,7 +702,7 @@ namespace NgoProject.Areas.Admin.Controllers
             };
             return View(view);
         }
-
+   
         [Route("DeleteAbout")]
 
         public async Task<ActionResult> DeleteAbout(int id)

@@ -5,7 +5,11 @@ using NgoProject.Models;
 using NgoProject.ViewModel;
 using System.Net;
 using Microsoft.AspNetCore.Mvc.Rendering;
-
+using System.Security.Claims;
+using System;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using X.PagedList;
 
 namespace NgoProject.Controllers
 {
@@ -23,8 +27,10 @@ namespace NgoProject.Controllers
 
         [Route("Donate")]
         [HttpGet]
-        public async Task<IActionResult> Donate()
+        public async Task<IActionResult> Donate(string searchString , int? page)
         {
+
+
             var list = await db.Donates.OrderByDescending(p => p.NewsId).Include(p => p.User).Include(p => p.News).ToListAsync();
             return View(list);
 
@@ -38,6 +44,8 @@ namespace NgoProject.Controllers
             ViewBag.NewsId = new SelectList(db.News.ToList(), "NewsId", "NewsName");
             return View();
         }
+
+
         [Route("DonateAdd")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -48,15 +56,12 @@ namespace NgoProject.Controllers
             if (ModelState.IsValid)
             {
 
-
-                Donate p = new Donate()
+                Donate p = new Donate
                 {
-
+                    UserName = model.UserName,
                     DonateMoney = model.DonateMoney,
-                    DonateDate = model.DonateDate,
-                    UserId = model.UserId,
+                    DonateDate = DateTime.Now,
                     NewsId = model.NewsId,
-
                 };
 
 
@@ -67,16 +72,29 @@ namespace NgoProject.Controllers
             return View(model);
 
         }
-
+        [Authorize]
         [Route("Payment")]
         [HttpGet]
         public IActionResult Payment()
         {
-         
-            return View();
 
 
+            {
+                var ak = (from c in db.Donates
+
+                          select new Donate
+                          {
+
+                              DonateId = c.DonateId,
+                              DonateMoney = c.DonateMoney
+
+                          }).OrderByDescending(c => c.DonateId).ToList();
+                //var list = db.aboutus.OrderByDescending(x=>x.Id).FirstOrDefault();
+                return View(ak[0]);
+
+
+            }
         }
 
     }
-    }
+}

@@ -80,6 +80,10 @@
             "QuickMailer": {
               "target": "Package",
               "version": "[1.0.0.1, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[8.4.7, )"
             }
           },
           "imports": [

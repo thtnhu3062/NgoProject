@@ -84,6 +84,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXE91clBhcnRuZXJFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/HomeAdmin/Question.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFF1ZXN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project3/NgoProject/NgoProject/Areas/Admin/Views/News/News.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c1xOZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -104,6 +108,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project3/NgoProject/NgoProject/Views/Account/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0VXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project3/NgoProject/NgoProject/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,14 +128,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project3/NgoProject/NgoProject/Views/Account/ResetPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/Project3/NgoProject/NgoProject/Views/Account/ResetPasswordConfirmation.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [F:/Project3/NgoProject/NgoProject/Views/Donate/Donate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRlXERvbmF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -138,6 +138,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/Project3/NgoProject/NgoProject/Views/Donate/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRlXFBheW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project3/NgoProject/NgoProject/Views/FeedBack/AddFeedBack.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZEJhY2tcQWRkRmVlZEJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project3/NgoProject/NgoProject/Views/FeedBack/IndexFeedBack.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZEJhY2tcSW5kZXhGZWVkQmFjay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project3/NgoProject/NgoProject/Views/Home/Privacy.cshtml]
@@ -170,6 +178,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/Project3/NgoProject/NgoProject/Views/User/OurPartner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPdXJQYXJ0bmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project3/NgoProject/NgoProject/Views/User/Searchcate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTZWFyY2hjYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project3/NgoProject/NgoProject/Views/User/SearchNews.cshtml]

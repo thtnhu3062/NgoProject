@@ -15,7 +15,7 @@
                     <thead>
                         <tr>
                             <th>
-                                    User Name
+                                    Full Name
                             </th>
                             <th>
                                     News Name
@@ -26,12 +26,6 @@
                             <th>
                                     Money Donate
                             </th>
-                            <th>
-
-                            </th>
-                            <th>
-
-                            </th>
 
                         </tr>
                     </thead>
@@ -41,7 +35,7 @@
                                 {
                             <tr>
                                 <td>
-                                            @Html.DisplayFor(modelItem => item.User.UserName)
+                                            @Html.DisplayFor(modelItem => item.UserName)
                                 </td>
                                 <td>
                                             @Html.DisplayFor(modelItem => item.News.NewsName)
@@ -52,16 +46,11 @@
                                 <td>
                                             @Html.DisplayFor(modelItem => item.DonateMoney)
                                 </td>
-                                <td>
-                                    <a >Complete</a> 
 
-                                </td>
-                                <td>
-                                    <a>Fail</a>
-                                </td>
 
                             </tr>
                                 }
+
                     </tbody>
 
                 </table>

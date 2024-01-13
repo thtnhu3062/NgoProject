@@ -356,8 +356,14 @@ namespace NgoProject.Migrations
                     b.Property<int?>("NewsId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("Stastus")
+                        .HasColumnType("int");
+
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DonateId");
 
@@ -377,26 +383,22 @@ namespace NgoProject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FeedbackId"), 1L, 1);
 
                     b.Property<string>("FeedbackEmail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FeedbackMessage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FeedbackName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FeedbackPhone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FeedbackSubject")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
 
                     b.HasKey("FeedbackId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Feedbacks");
                 });
@@ -499,19 +501,21 @@ namespace NgoProject.Migrations
                     b.Property<string>("UserAddress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserAvatar")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("UserEmail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("UserPassword")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserPhone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
@@ -585,15 +589,6 @@ namespace NgoProject.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("NgoProject.Models.Feedback", b =>
-                {
-                    b.HasOne("NgoProject.Models.User", "User")
-                        .WithMany("Feedbacks")
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("NgoProject.Models.News", b =>
                 {
                     b.HasOne("NgoProject.Models.Category", "Category")
@@ -627,8 +622,6 @@ namespace NgoProject.Migrations
             modelBuilder.Entity("NgoProject.Models.User", b =>
                 {
                     b.Navigation("Donates");
-
-                    b.Navigation("Feedbacks");
                 });
 #pragma warning restore 612, 618
         }
